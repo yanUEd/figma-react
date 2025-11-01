@@ -31,6 +31,8 @@ Figma 对应：**Frame / Rectangle**
 |------|------|--------|------------|------|------|
 | **布局属性** |||||||
 | `width`/`height` | `'fill' \| 'hug' \| string` | `'hug'` | Width/Height | `width="fill"` | 尺寸（fill填充父容器，hug适应内容） |
+| `minWidth`/`maxWidth` | `string \| null` | `null` | Min/Max Width | `minWidth="200px" maxWidth="400px"` | 最小/最大宽度约束 |
+| `minHeight`/`maxHeight` | `string \| null` | `null` | Min/Max Height | `minHeight="100px" maxHeight="300px"` | 最小/最大高度约束 |
 | `alignment` | `'top-left' \| 'top-center' \| 'top-right' \| 'center-left' \| 'center-center' \| 'center-right' \| 'bottom-left' \| 'bottom-center' \| 'bottom-right'` | `'top-left'` | Align | `alignment="center-center"` | 9点对齐方式 |
 | `distribution` | `'pack' \| 'center' \| 'space' \| 'space-between'` | `'pack'` | Distribute | `distribution="space-between"` | 子元素分布方式 |
 | `gap` | `string` | `'0'` | Item Spacing | `gap="$md"` | 子元素间距 |
@@ -151,6 +153,8 @@ Figma 对应：**Auto Layout (Vertical)**
 |------|------|--------|------------|------|------|
 | **继承属性** | | | | | |
 | `width`/`height` | `'fill' \| 'hug' \| string` | `'hug'` | Width/Height | `width="fill"` | 尺寸（fill填充父容器，hug适应内容） |
+| `minWidth`/`maxWidth` | `string \| null` | `null` | Min/Max Width | `minWidth="200px" maxWidth="400px"` | 最小/最大宽度约束 |
+| `minHeight`/`maxHeight` | `string \| null` | `null` | Min/Max Height | `minHeight="100px" maxHeight="300px"` | 最小/最大高度约束 |
 | `alignment` | `'top-left' \| 'top-center' \| 'top-right' \| 'center-left' \| 'center-center' \| 'center-right' \| 'bottom-left' \| 'bottom-center' \| 'bottom-right'` | `'top-left'` | Align | `alignment="center-center"` | 子元素在Column中的对齐方式 |
 | `gap` | `string` | `'0'` | Item Spacing | `gap="$md"` | 子元素间距 |
 | `padding` | `string` | `'0'` | Padding | `padding="$lg"` | 内边距（支持方向控制） |
@@ -183,6 +187,8 @@ Figma 对应：**Auto Layout (Horizontal)**
 | `wrap` | `'true' \| 'false'` | `'false'` | - | `wrap="true"` | 是否自动换行 |
 | **继承属性** | | | | | |
 | `width`/`height` | `'fill' \| 'hug' \| string` | `'hug'` | Width/Height | `width="fill"` | 尺寸（fill填充父容器，hug适应内容） |
+| `minWidth`/`maxWidth` | `string \| null` | `null` | Min/Max Width | `minWidth="200px" maxWidth="400px"` | 最小/最大宽度约束 |
+| `minHeight`/`maxHeight` | `string \| null` | `null` | Min/Max Height | `minHeight="100px" maxHeight="300px"` | 最小/最大高度约束 |
 | `alignment` | `'top-left' \| 'top-center' \| 'top-right' \| 'center-left' \| 'center-center' \| 'center-right' \| 'bottom-left' \| 'bottom-center' \| 'bottom-right'` | `'top-left'` | Align | `alignment="center-center"` | 子元素在Row中的对齐方式 |
 | `gap` | `string` | `'0'` | Item Spacing | `gap="$md"` | 子元素间距 |
 | `padding` | `string` | `'0'` | Padding | `padding="$lg"` | 内边距（支持方向控制） |
@@ -213,6 +219,8 @@ Figma 对应：**Frame with Absolute Positioning**
 |------|------|--------|------------|------|------|
 | **继承属性** | | | | | |
 | `width`/`height` | `'fill' \| 'hug' \| string` | `'hug'` | Width/Height | `width="200px"` | 尺寸（层叠容器尺寸） |
+| `minWidth`/`maxWidth` | `string \| null` | `null` | Min/Max Width | `minWidth="200px" maxWidth="400px"` | 最小/最大宽度约束 |
+| `minHeight`/`maxHeight` | `string \| null` | `null` | Min/Max Height | `minHeight="100px" maxHeight="300px"` | 最小/最大高度约束 |
 | `alignment` | `'top-left' \| 'top-center' \| 'top-right' \| 'center-left' \| 'center-center' \| 'center-right' \| 'bottom-left' \| 'bottom-center' \| 'bottom-right'` | `'top-left'` | Align | `alignment="center-center"` | 默认子元素对齐方式 |
 | `padding` | `string` | `'0'` | Padding | `padding="$lg"` | 内边距（支持方向控制） |
 | `fill` | `string \| null` | `null` | Fill | `fill="$surface"` | 填充色（null表示无背景色） |
@@ -289,6 +297,10 @@ border: 1px dashed #000000;
 <Box
   width="200px"
   height="100px"
+  minWidth="150px"
+  maxWidth="300px"
+  minHeight="80px"
+  maxHeight="120px"
   alignment="center-center"
   distribution="space-between"
   gap="16px"
@@ -308,6 +320,10 @@ border: 1px dashed #000000;
 .box {
   width: 200px;
   height: 100px;
+  min-width: 150px;
+  max-width: 300px;
+  min-height: 80px;
+  max-height: 120px;
   display: flex;
   flex-direction: column;  /* 默认 */
   align-items: center;
@@ -516,6 +532,10 @@ interface BoxProps {
   // 布局属性
   width?: WidthHeight;
   height?: WidthHeight;
+  minWidth?: string | null;
+  maxWidth?: string | null;
+  minHeight?: string | null;
+  maxHeight?: string | null;
   alignment?: Alignment;
   distribution?: Distribution;
   gap?: SpacingToken;
