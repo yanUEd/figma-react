@@ -107,6 +107,14 @@ export const generateCSSConfig = (
     ...mapAlignment(alignment || 'top-left'),
   };
 
+  // ZStack特殊处理：不应用flexbox布局属性
+  if (containerType === 'zstack') {
+    delete (config as any).display;
+    delete (config as any).flexDirection;
+    delete (config as any).alignItems;
+    delete (config as any).justifyContent;
+  }
+
   // 尺寸属性
   if (width) config.width = mapSize(width as WidthHeight);
   if (height) config.height = mapSize(height as WidthHeight);
