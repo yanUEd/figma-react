@@ -9,14 +9,10 @@ function App() {
     <div style={{ fontFamily: 'Arial, sans-serif' }}>
       {/* Navigation */}
       <Box
-        backgroundColor="#f8f9fa"
+        fill="#f8f9fa"
         padding="16px 24px"
-        borderBottom="1px solid #dee2e6"
-        position="sticky"
-        top="0"
-        zIndex={1000}
       >
-        <Row justifyContent="space-between" alignItems="center">
+        <Row distribution="space-between">
           <h1 style={{ margin: 0, color: '#495057', fontSize: '20px' }}>
             Figma Layout Components
           </h1>
@@ -90,13 +86,13 @@ function App() {
               strokeColor="#ce93d8"
               strokeWeight="1px"
             >
-              <Box fill="#ce93d8" padding="8px" height="40px" radius="4px" color="white" alignItems="center" justifyContent="center">
+              <Box fill="#ce93d8" padding="8px" height="40px" radius="4px" >
                 项目 1
               </Box>
-              <Box fill="#ce93d8" padding="8px" height="40px" radius="4px" color="white" alignItems="center" justifyContent="center">
+              <Box fill="#ce93d8" padding="8px" height="40px" radius="4px" >
                 项目 2
               </Box>
-              <Box fill="#ce93d8" padding="8px" height="40px" radius="4px" color="white" alignItems="center" justifyContent="center">
+              <Box fill="#ce93d8" padding="8px" height="40px" radius="4px">
                 项目 3
               </Box>
             </Column>
@@ -114,13 +110,13 @@ function App() {
               strokeColor="#a5d6a7"
               strokeWeight="1px"
             >
-              <Box fill="#a5d6a7" padding="8px" width="100px" height="60px" radius="4px" color="white" alignItems="center" justifyContent="center">
+              <Box fill="#a5d6a7" padding="8px" width="100px" height="60px" radius="4px">
                 左侧
               </Box>
-              <Box fill="#a5d6a7" padding="8px" width="120px" height="60px" radius="4px" color="white" alignItems="center" justifyContent="center">
+              <Box fill="#a5d6a7" padding="8px" width="120px" height="60px" radius="4px">
                 中间
               </Box>
-              <Box fill="#a5d6a7" padding="8px" width="80px" height="60px" radius="4px" color="white" alignItems="center" justifyContent="center">
+              <Box fill="#a5d6a7" padding="8px" width="80px" height="60px" radius="4px">
                 右侧
               </Box>
             </Row>
