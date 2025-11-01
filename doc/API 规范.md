@@ -35,17 +35,38 @@ Figma 对应：**Frame / Rectangle**
 | `distribution` | `'pack' \| 'center' \| 'space' \| 'space-between'` | `'pack'` | Distribute | `distribution="space-between"` | 子元素分布方式 |
 | `gap` | `string` | `'0'` | Item Spacing | `gap="$md"` | 子元素间距 |
 | `padding` | `string` | `'0'` | Padding | `padding="x:$lg y:$sm"` | 内边距（支持方向控制） |
-| `clipContent` | `'true' \| 'false'` | `'false'` | Clip Content | `clipContent="true"` | 裁剪超出内容（对应Figma Clip Content） |
+| `clipContent` | `'true' \| 'false'` | `'true'` | Clip Content | `clipContent="true"` | 裁剪超出内容（对应Figma Clip Content） |
 | **视觉属性** |||||||
 | `fill` | `string \| null` | `null` | Fill | `fill="$surface"` | 填充色（null表示无背景色） |
 | `strokeColor` | `string \| null` | `null` | Stroke Color | `strokeColor="$primary"` | 边框颜色（支持方向控制） |
 | `strokeWeight` | `string \| null` | `null` | Stroke Weight | `strokeWeight="$md"` | 边框粗细（支持方向控制） |
+| `strokeStyle` | `'solid' \| 'dashed' \| 'dotted' \| 'double' \| 'groove' \| 'ridge' \| 'inset' \| 'outset' \| null` | `null` | Stroke Style | `strokeStyle="dashed"` | 边框样式（支持方向控制） |
 | `radius` | `string \| null` | `null` | Corner Radius | `radius="$md"` | 圆角（null表示无圆角） |
 | `opacity` | `string \| null` | `null` | Opacity | `opacity="0.8"` | 透明度（null表示无透明度设置） |
 
+### 智能默认值机制
+
+**Stroke属性智能默认值**：当任何stroke属性被设置且不为null时，其他缺失的stroke属性将自动补充默认值：
+
+- **缺失strokeColor** → 自动使用 `$border`（如果token未定义则回退到 `#000000`）
+- **缺失strokeWeight** → 自动使用 `1px`
+- **缺失strokeStyle** → 自动使用 `solid`
+
+**使用示例**：
+```tsx
+// 只设置颜色，自动补充：weight="1px", style="solid"
+<Box strokeColor="$primary" />
+
+// 只设置粗细，自动补充：color="$border"→黑色, style="solid"
+<Box strokeWeight="2px" />
+
+// 只设置样式，自动补充：color="$border"→黑色, weight="1px"
+<Box strokeStyle="dashed" />
+```
+
 ### 方向控制语法
 
-支持属性：`padding`, `strokeColor`, `strokeWeight`, `radius`
+支持属性：`padding`, `strokeColor`, `strokeWeight`, `strokeStyle`, `radius`
 
 - **全方向**：`"$lg"` 或 `"10px"`
 - **方向控制**：使用 `direction:value` 格式
@@ -68,6 +89,22 @@ Figma 对应：**Frame / Rectangle**
 - **Token值**：使用 `$` 前缀，如 `$md`, `$primary`, `$surface`
 - **自定义值**：直接使用CSS原生值，如 `8px`, `#ffffff`, `0.8`
 - **null值**：表示"不应用此效果"（用于装饰性属性）
+
+### Token回退机制
+
+**Token优先级**：用户设置值 → design token → 黑色回退
+
+- **Color Token回退**：当color token未定义或为空时，自动回退到 `#000000`（黑色）
+- **应用场景**：主要用于strokeColor的智能默认值 `$border` token
+
+**回链示例**：
+```tsx
+// 如果 $border token未定义，回退到黑色边框
+<Box strokeWeight="1px" />  // 自动使用 strokeColor="#000000"
+
+// 如果 $primary token未定义，回退到黑色
+<Box strokeStyle="dashed" />  // 自动使用 strokeColor="#000000"
+```
 
 ### 类型定义
 
@@ -95,171 +132,6 @@ Figma 对应：**Frame / Rectangle**
 // 示例：padding="x:$lg y:$sm", strokeColor="top:$border", radius="top-right:$md"
 ```
 
-### 示例
-
-```tsx
-// ===== 核心场景示例 =====
-
-// 1. 基础卡片 - 最常用场景
-<Box
-  fill="$surface"
-  padding="$lg"
-  radius="$md"
-  strokeColor="$divider"
-  strokeWeight="$sm"
-  alignment="center-center"
-  distribution="space-between"
-  gap="$md"
->
-  <Text type="title-md">标题</Text>
-  <Button variant="primary">操作</Button>
-</Box>
-
-// 2. 纯布局容器 - 无装饰效果
-<Box
-  padding="$md"
-  gap="$sm"
->
-  <Text>仅用于布局，无任何装饰效果</Text>
-  <Button>按钮</Button>
-</Box>
-
-// 3. 用户信息卡 - 典型UI组件
-<Box
-  fill="$surface"
-  padding="$lg"
-  radius="$md"
-  gap="$md"
-  alignment="center-center"
->
-  <Avatar size="lg" />
-  <Box distribution="center">
-    <Text type="title-md">用户名</Text>
-    <Text type="body-sm">用户描述</Text>
-  </Box>
-</Box>
-
-// 4. 图片容器 - 裁剪控制
-<Box
-  width="200px"
-  height="150px"
-  radius="$md"
-  clipContent="true"
-  overflow="hidden"
->
-  <Image src="large-image.jpg" width="100%" height="100%" />
-</Box>
-
-// ===== 布局控制示例 =====
-
-// 5. 垂直居中布局
-<Box
-  width="fill"
-  height="200px"
-  alignment="center-center"
-  distribution="center"
-  gap="$sm"
->
-  <Icon />
-  <Text>居中对齐的内容</Text>
-</Box>
-
-// 6. 两端对齐布局 - 设置项
-<Box
-  padding="y:$md"
-  strokeColor="bottom:$divider"
-  strokeWeight="bottom:1px"
-  alignment="center-center"
-  distribution="space-between"
->
-  <Text>设置选项</Text>
-  <Switch />
-</Box>
-
-// 7. 响应式网格容器
-<Box
-  width="fill"
-  padding="$lg"
-  gap="$md"
-  alignment="top-center"
->
-  {features.map(feature => (
-    <Box key={feature.id} width="300px" fill="$surface" padding="$md" radius="$md">
-      <Icon name={feature.icon} />
-      <Text type="title-sm">{feature.title}</Text>
-      <Text>{feature.description}</Text>
-    </Box>
-  ))}
-</Box>
-
-// ===== 样式控制示例 =====
-
-// 8. 方向内边距控制
-<Box
-  padding="x:$lg y:$sm"        // 水平大间距，垂直小间距
-  gap="$sm"
->
-  <Text>左右边距大，上下边距小</Text>
-</Box>
-
-// 9. 单边边框效果
-<Box
-  padding="$md"
-  strokeColor="bottom:$primary"
-  strokeWeight="bottom:2px"
->
-  <Text>只有底边框的容器</Text>
-</Box>
-
-// 10. 混合样式 - Token + 自定义值
-<Box
-  fill="#f5f5f5"              // 自定义背景色
-  radius="$md"                // Token圆角
-  padding="$lg 20px"          // 混合内边距
-  gap="$sm"
->
-  <Text>Token和自定义值混合使用</Text>
-</Box>
-
-// ===== 高级特性示例 =====
-
-// 11. 复杂样式控制 - 边框与角落圆角组合
-<Box
-  padding="$md"
-  strokeColor="top:$border right:$primary bottom:$border left:$border"
-  strokeWeight="top:1px right:3px bottom:1px left:1px"
-  radius="top-right:$md bottom-left:$md"  // 角落圆角：仅右上角和左下角
->
-  <Text>边框与角落圆角的复杂组合效果</Text>
-</Box>
-
-// 12. 实际项目 - 卡片列表
-<Box
-  fill="$surface"
-  padding="x:$lg y:$md"
-  radius="$md"
-  gap="$sm"
->
-  {items.map(item => (
-    <Box
-      key={item.id}
-      padding="y:$sm"
-      strokeColor={item !== last ? "bottom:$divider" : null}
-      strokeWeight="bottom:1px"
-      alignment="center-center"
-      distribution="space-between"
-    >
-      <Box>
-        <Text type="title-sm">{item.title}</Text>
-        <Text type="body-xs">{item.subtitle}</Text>
-      </Box>
-      <Button variant="ghost" size="sm">
-        <Icon name="chevron-right" />
-      </Button>
-    </Box>
-  ))}
-</Box>
-```
 
 ---
 
@@ -285,116 +157,11 @@ Figma 对应：**Auto Layout (Vertical)**
 | `fill` | `string \| null` | `null` | Fill | `fill="$surface"` | 填充色（null表示无背景色） |
 | `strokeColor` | `string \| null` | `null` | Stroke Color | `strokeColor="$primary"` | 边框颜色（支持方向控制） |
 | `strokeWeight` | `string \| null` | `null` | Stroke Weight | `strokeWeight="$md"` | 边框粗细（支持方向控制） |
+| `strokeStyle` | `'solid' \| 'dashed' \| 'dotted' \| 'double' \| 'groove' \| 'ridge' \| 'inset' \| 'outset' \| null` | `null` | Stroke Style | `strokeStyle="dashed"` | 边框样式（支持方向控制） |
 | `radius` | `string \| null` | `null` | Corner Radius | `radius="$md"` | 圆角（null表示无圆角） |
 | `opacity` | `string \| null` | `null` | Opacity | `opacity="0.8"` | 透明度（null表示无透明度设置） |
-| `clipContent` | `'true' \| 'false'` | `'false'` | Clip Content | `clipContent="true"` | 裁剪超出内容（对应Figma Clip Content） |
+| `clipContent` | `'true' \| 'false'` | `'true'` | Clip Content | `clipContent="true"` | 裁剪超出内容（对应Figma Clip Content） |
 
-### 示例
-
-```tsx
-// 用户卡片
-<Column gap="$md" alignment="center-center" distribution="center" padding="$lg" fill="$surface" radius="$md">
-  <Avatar src="user.jpg" size="xl" />
-  <Column gap="$xs" alignment="center-center">
-    <Text type="title-md">张三</Text>
-    <Text type="body-sm" fill="$muted">产品设计师</Text>
-  </Column>
-  <Button variant="primary">关注</Button>
-</Column>
-
-// 垂直列表菜单
-<Column gap="0" alignment="top-left" fill="$surface" radius="$md" strokeColor="$divider" strokeWeight="$sm">
-  <Box padding="$md" strokeColor="bottom:$divider" strokeWeight="bottom:1px">
-    <Row gap="$sm" alignment="center-center" distribution="space-between">
-      <Row gap="$sm" alignment="center-center">
-        <Icon name="user" />
-        <Text>个人信息</Text>
-      </Row>
-      <Icon name="chevron-right" fill="$muted" />
-    </Row>
-  </Box>
-  <Box padding="$md" strokeColor="bottom:$divider" strokeWeight="bottom:1px">
-    <Row gap="$sm" alignment="center-center" distribution="space-between">
-      <Row gap="$sm" alignment="center-center">
-        <Icon name="settings" />
-        <Text>设置</Text>
-      </Row>
-      <Icon name="chevron-right" fill="$muted" />
-    </Row>
-  </Box>
-  <Box padding="$md">
-    <Row gap="$sm" alignment="center-center" distribution="space-between">
-      <Row gap="$sm" alignment="center-center">
-        <Icon name="logout" fill="$error" />
-        <Text fill="$error">退出登录</Text>
-      </Row>
-      <Icon name="chevron-right" fill="$muted" />
-    </Row>
-  </Box>
-</Column>
-
-// 表单布局
-<Column gap="$lg" alignment="top-left" padding="$lg" fill="$surface" radius="$md">
-  <Text type="title-md">注册表单</Text>
-  <Column gap="$md">
-    <Column gap="$xs">
-      <Text type="label-sm">邮箱地址</Text>
-      <Box padding="$sm" strokeColor="$border" strokeWeight="$sm" radius="$sm">
-        <Text type="body-sm" fill="$muted">请输入邮箱</Text>
-      </Box>
-    </Column>
-    <Column gap="$xs">
-      <Text type="label-sm">密码</Text>
-      <Box padding="$sm" strokeColor="$border" strokeWeight="$sm" radius="$sm">
-        <Text type="body-sm" fill="$muted">请输入密码</Text>
-      </Box>
-    </Column>
-  </Column>
-  <Column gap="$md">
-    <Button variant="primary" width="fill">注册</Button>
-    <Box alignment="center-center">
-      <Text type="body-sm" fill="$muted">已有账号？<Text fill="$primary">立即登录</Text></Text>
-    </Box>
-  </Column>
-</Column>
-
-// 侧边栏导航
-<Column gap="$xs" alignment="top-left" width="200px" padding="$md" fill="$surface">
-  <Text type="title-sm" fill="$muted">导航菜单</Text>
-  <Column gap="$xs">
-    <Box padding="y:$sm" alignment="center-left">
-      <Row gap="$sm" alignment="center-center">
-        <Icon name="home" />
-        <Text>首页</Text>
-      </Row>
-    </Box>
-    <Box padding="y:$sm" fill="$primary" alignment="center-left" radius="$sm">
-      <Row gap="$sm" alignment="center-center">
-        <Icon name="dashboard" />
-        <Text color="white">仪表板</Text>
-      </Row>
-    </Box>
-    <Box padding="y:$sm" alignment="center-left">
-      <Row gap="$sm" alignment="center-center">
-        <Icon name="profile" />
-        <Text>个人资料</Text>
-      </Row>
-    </Box>
-  </Column>
-</Column>
-
-// 统计卡片
-<Column gap="$md" padding="$lg" fill="$surface" radius="$md" strokeColor="$border" strokeWeight="$sm">
-  <Text type="body-sm" fill="$muted">月度收入</Text>
-  <Column gap="$xs" alignment="top-left">
-    <Text type="title-lg" fill="$success">+12.5%</Text>
-    <Text type="title-md">¥128,430</Text>
-  </Column>
-  <Box fill="$success" padding="x:$sm y:$xs" radius="$sm" alignment="top-left">
-    <Text type="body-xs" color="white">较上月增长</Text>
-  </Box>
-</Column>
-```
 
 ---
 
@@ -422,76 +189,11 @@ Figma 对应：**Auto Layout (Horizontal)**
 | `fill` | `string \| null` | `null` | Fill | `fill="$surface"` | 填充色（null表示无背景色） |
 | `strokeColor` | `string \| null` | `null` | Stroke Color | `strokeColor="$primary"` | 边框颜色（支持方向控制） |
 | `strokeWeight` | `string \| null` | `null` | Stroke Weight | `strokeWeight="$md"` | 边框粗细（支持方向控制） |
+| `strokeStyle` | `'solid' \| 'dashed' \| 'dotted' \| 'double' \| 'groove' \| 'ridge' \| 'inset' \| 'outset' \| null` | `null` | Stroke Style | `strokeStyle="dashed"` | 边框样式（支持方向控制） |
 | `radius` | `string \| null` | `null` | Corner Radius | `radius="$md"` | 圆角（null表示无圆角） |
 | `opacity` | `string \| null` | `null` | Opacity | `opacity="0.8"` | 透明度（null表示无透明度设置） |
-| `clipContent` | `'true' \| 'false'` | `'false'` | Clip Content | `clipContent="true"` | 裁剪超出内容（对应Figma Clip Content） |
+| `clipContent` | `'true' \| 'false'` | `'true'` | Clip Content | `clipContent="true"` | 裁剪超出内容（对应Figma Clip Content） |
 
-### 示例
-
-```tsx
-// 设置项 - 两端对齐
-<Row gap="$sm" alignment="center-center" distribution="space-between">
-  <Text type="label-sm">设置</Text>
-  <Switch />
-</Row>
-
-// 按钮组
-<Row gap="$xs" alignment="center-center">
-  <Button variant="secondary">取消</Button>
-  <Button variant="primary">确定</Button>
-</Row>
-
-// 用户信息行
-<Row gap="$md" alignment="center-center" padding="$lg" fill="$surface" radius="$md">
-  <Avatar src="user.jpg" size="md" />
-  <Column gap="$xs">
-    <Text type="title-sm">用户名</Text>
-    <Text type="body-xs">user@example.com</Text>
-  </Column>
-  <Button variant="ghost" size="sm">
-    <Icon name="more" />
-  </Button>
-</Row>
-
-// 标签云 - 换行布局
-<Row wrap="true" gap="$md" alignment="top-left">
-  {tags.map(tag => (
-    <Box key={tag} padding="x:$sm y:$xs" radius="$full" fill="$primary">
-      <Text color="white">{tag}</Text>
-    </Box>
-  ))}
-</Row>
-
-// 搜索栏
-<Row gap="$sm" alignment="center-center" padding="x:$md y:$sm" fill="$surface" radius="$md" strokeColor="$divider" strokeWeight="$sm">
-  <Icon name="search" fill="$muted" />
-  <Box fill="transparent" width="100%">
-    <Text type="body-sm" fill="$muted">搜索...</Text>
-  </Box>
-  <Button variant="ghost" size="sm">
-    <Icon name="filter" />
-  </Button>
-</Row>
-
-// 卡片操作栏
-<Row gap="$md" alignment="center-between" padding="$lg" fill="$surface" strokeColor="bottom:$divider" strokeWeight="bottom:1px">
-  <Column gap="$xs">
-    <Text type="title-md">卡片标题</Text>
-    <Text type="body-sm">副标题描述</Text>
-  </Column>
-  <Row gap="$sm">
-    <Button variant="ghost" size="sm">
-      <Icon name="like" />
-    </Button>
-    <Button variant="ghost" size="sm">
-      <Icon name="share" />
-    </Button>
-    <Button variant="ghost" size="sm">
-      <Icon name="bookmark" />
-    </Button>
-  </Row>
-</Row>
-```
 
 ---
 
@@ -516,89 +218,55 @@ Figma 对应：**Frame with Absolute Positioning**
 | `fill` | `string \| null` | `null` | Fill | `fill="$surface"` | 填充色（null表示无背景色） |
 | `strokeColor` | `string \| null` | `null` | Stroke Color | `strokeColor="$primary"` | 边框颜色（支持方向控制） |
 | `strokeWeight` | `string \| null` | `null` | Stroke Weight | `strokeWeight="$md"` | 边框粗细（支持方向控制） |
+| `strokeStyle` | `'solid' \| 'dashed' \| 'dotted' \| 'double' \| 'groove' \| 'ridge' \| 'inset' \| 'outset' \| null` | `null` | Stroke Style | `strokeStyle="dashed"` | 边框样式（支持方向控制） |
 | `radius` | `string \| null` | `null` | Corner Radius | `radius="$md"` | 圆角（null表示无圆角） |
 | `opacity` | `string \| null` | `null` | Opacity | `opacity="0.8"` | 透明度（null表示无透明度设置） |
-| `clipContent` | `'true' \| 'false'` | `'false'` | Clip Content | `clipContent="true"` | 裁剪超出内容（对应Figma Clip Content） |
+| `clipContent` | `'true' \| 'false'` | `'true'` | Clip Content | `clipContent="true"` | 裁剪超出内容（对应Figma Clip Content） |
 
 **使用说明**：
 - **子元素定位**：通过Box的 `alignment` 属性控制单个子元素在ZStack中的对齐方式
 - **层级顺序**：先定义的元素在上层，后定义的元素在下层（类似Photoshop图层）
 - **尺寸控制**：建议明确设置width和height，因为层叠元素不会自动调整容器大小
 
-### 示例
-
-```tsx
-// 卡片角标
-<ZStack width="200px" height="150px" alignment="top-right">
-  {/* 角标在最上层 */}
-  <Box alignment="top-right" fill="$error" radius="full" width="20px" height="20px">
-    <Text color="white" alignment="center-center">3</Text>
-  </Box>
-
-  {/* 卡片背景在最下层 */}
-  <Box fill="$surface" padding="$lg" radius="$md" strokeColor="$divider" strokeWeight="$sm">
-    <Text type="title-sm">卡片内容</Text>
-    <Text>这是卡片的描述文本</Text>
-  </Box>
-</ZStack>
-
-// 图片覆盖标题
-<ZStack width="300px" height="200px" alignment="bottom-center">
-  {/* 文字覆盖层在上层 */}
-  <Box fill="rgba(0,0,0,0.7)" padding="x:$lg y:$md" radius="bottom-$md" width="100%">
-    <Text color="white" alignment="center-center">图片标题</Text>
-  </Box>
-
-  {/* 背景图片在下层 */}
-  <Image src="banner.jpg" radius="$md" />
-</ZStack>
-
-// 加载状态
-<ZStack width="100%" height="200px" alignment="center-center">
-  {/* 加载文字在上层 */}
-  <Box alignment="bottom-center" padding="$sm">
-    <Text type="body-sm">加载中...</Text>
-  </Box>
-
-  {/* Spinner 在中间层 */}
-  <Spinner />
-
-  {/* 背景层在最下层 */}
-  <Box fill="$surface" />
-</ZStack>
-
-// 用户头像+在线状态
-<ZStack width="60px" height="60px" alignment="bottom-right">
-  {/* 在线状态指示器在上层 */}
-  <Box alignment="bottom-right" fill="$success" radius="full" width="16px" height="16px" strokeColor="white" strokeWeight="2px" />
-
-  {/* 头像背景在下层 */}
-  <Avatar src="user.jpg" size="lg" />
-</ZStack>
-
-// 层级说明示例
-<ZStack width="200px" height="120px">
-  {/* 第1层：最上层 */}
-  <Box alignment="top-left" fill="$error" width="40px" height="40px">
-    <Text color="white" alignment="center-center">1</Text>
-  </Box>
-
-  {/* 第2层：中间层 */}
-  <Box alignment="center-center" fill="$warning" width="80px" height="80px">
-    <Text color="white" alignment="center-center">2</Text>
-  </Box>
-
-  {/* 第3层：最下层 */}
-  <Box fill="$primary" width="120px" height="120px">
-    <Text color="white" alignment="center-center">3</Text>
-  </Box>
-</ZStack>
-```
 ---
 
 ## 6️⃣ CSS 映射关系
 
 ### 组件与CSS对应
+
+### 智能默认值CSS实现
+
+**Stroke属性智能默认值**映射到CSS的规则：
+
+```typescript
+// 输入：只设置 strokeColor="$primary"
+<Box strokeColor="$primary" />
+
+// 输出CSS：
+border: 1px solid var(--color-primary);
+```
+
+```typescript
+// 输入：只设置 strokeWeight="2px"
+<Box strokeWeight="2px" />
+
+// 输出CSS（$border token存在）：
+border: 2px solid var(--color-border);
+
+// 输出CSS（$border token不存在，回退到黑色）：
+border: 2px solid #000000;
+```
+
+```typescript
+// 输入：只设置 strokeStyle="dashed"
+<Box strokeStyle="dashed" />
+
+// 输出CSS（$border token存在）：
+border: 1px dashed var(--color-border);
+
+// 输出CSS（$border token不存在，回退到黑色）：
+border: 1px dashed #000000;
+```
 
 #### Box
 ```typescript
@@ -612,6 +280,7 @@ Figma 对应：**Frame with Absolute Positioning**
   fill="#ffffff"
   strokeColor="#e0e0e0"
   strokeWeight="1px"
+  strokeStyle="solid"
   radius="8px"
   opacity="0.8"
   clipContent="true"
@@ -631,6 +300,7 @@ Figma 对应：**Frame with Absolute Positioning**
   padding: 20px;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
+  border-style: solid;
   border-radius: 8px;
   opacity: 0.8;
   overflow: hidden;
@@ -739,14 +409,41 @@ padding-left: 10px;
 ```typescript
 strokeColor="top:$primary right:$secondary"
 strokeWeight="top:2px right:1px"
+strokeStyle="top:solid right:dashed"
 ```
 
 **映射CSS：**
 ```css
 border-top: 2px solid var(--color-primary);
+border-top-style: solid;
 border-right: 1px solid var(--color-secondary);
+border-right-style: dashed;
 border-bottom: none;
 border-left: none;
+```
+
+#### strokeStyle 映射
+```typescript
+strokeStyle="solid"      // 实线
+strokeStyle="dashed"     // 虚线
+strokeStyle="dotted"     // 点线
+strokeStyle="double"     // 双线
+strokeStyle="groove"     // 凹槽边框
+strokeStyle="ridge"      // 脊状边框
+strokeStyle="inset"      // 内嵌边框
+strokeStyle="outset"     // 外凸边框
+```
+
+**映射CSS：**
+```css
+border-style: solid;     /* 实线 */
+border-style: dashed;    /* 虚线 */
+border-style: dotted;    /* 点线 */
+border-style: double;    /* 双线 */
+border-style: groove;    /* 凹槽边框 */
+border-style: ridge;     /* 脊状边框 */
+border-style: inset;     /* 内嵌边框 */
+border-style: outset;    /* 外凸边框 */
 ```
 
 #### radius 角落控制
@@ -785,6 +482,16 @@ type WidthHeight = 'fill' | 'hug' | string;
 type SpacingToken = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | string;
 type ColorToken = string;
 type BorderRadiusToken = 'none' | 'sm' | 'md' | 'lg' | string;
+
+// 边框样式
+type StrokeStyle = 'solid' | 'dashed' | 'dotted' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' | null;
+
+// 智能默认值说明：
+// 当任何stroke属性被设置且不为null时，其他缺失的stroke属性将自动补充默认值：
+// - strokeColor缺失 → "$border" token → 回退到 "#000000"
+// - strokeWeight缺失 → "1px"
+// - strokeStyle缺失 → "solid"
+// 这是运行时行为，TypeScript接口保持可选属性不变
 ```
 
 ### Box 组件接口
@@ -803,6 +510,7 @@ interface BoxProps {
   fill?: ColorToken | null;
   strokeColor?: ColorToken | null;
   strokeWeight?: string | null;
+  strokeStyle?: StrokeStyle;
   radius?: BorderRadiusToken | null;
   opacity?: string | null;
 
@@ -849,109 +557,24 @@ export const ZStack: React.FC<ZStackProps>;
 ### 何时使用哪个组件？
 
 #### Box - 通用容器
-```typescript
-// ✅ 适合场景：
-<Box fill="$surface" padding="$lg" radius="$md">
-  <Text>卡片内容</Text>
-</Box>
-
-// ✅ 单个元素的包装
-<Box padding="$sm" strokeColor="$border" strokeWeight="$sm" radius="$sm">
-  <Input placeholder="输入内容" />
-</Box>
-```
+最通用的视觉容器，用于包裹内容或定义卡片、面板、背景块。支持所有布局和视觉属性。
 
 #### Column - 垂直堆叠
-```typescript
-// ✅ 表单布局
-<Column gap="$md">
-  <Input label="邮箱" />
-  <Input label="密码" />
-  <Button>提交</Button>
-</Column>
-
-// ✅ 用户信息卡片
-<Column alignment="center-center" gap="$sm">
-  <Avatar />
-  <Text>用户名</Text>
-  <Button>关注</Button>
-</Column>
-```
+专门用于垂直布局，继承Box的所有属性（除了distribution）。适用于表单、列表、卡片等垂直排列的场景。
 
 #### Row - 水平排列
-```typescript
-// ✅ 设置项
-<Row distribution="space-between" alignment="center-center">
-  <Text>通知</Text>
-  <Switch />
-</Row>
-
-// ✅ 按钮组
-<Row gap="$xs" alignment="center-center">
-  <Button variant="secondary">取消</Button>
-  <Button variant="primary">确定</Button>
-</Row>
-
-// ✅ 标签云
-<Row wrap="true" gap="$md">
-  {tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
-</Row>
-```
+专门用于水平布局，继承Box的所有属性，并新增`wrap`属性控制换行。适用于按钮组、导航栏、标签云等水平排列的场景。
 
 #### ZStack - 层叠布局
-```typescript
-// ✅ 卡片角标
-<ZStack width="200px" height="150px">
-  <Box alignment="top-right" fill="$error" radius="full" width="20px" height="20px">
-    <Text color="white">3</Text>
-  </Box>
-  <Box fill="$surface" padding="$md" radius="$md">
-    <Text>卡片内容</Text>
-  </Box>
-</ZStack>
-
-// ✅ 图片叠加文字
-<ZStack alignment="bottom-center">
-  <Box fill="rgba(0,0,0,0.7)" padding="$sm">
-    <Text color="white">图片标题</Text>
-  </Box>
-  <Image src="banner.jpg" radius="$md" />
-</ZStack>
-```
+专门用于层叠布局，继承Box的所有属性（除了gap和distribution）。先定义的元素在上层，适用于卡片角标、图片覆盖、加载状态等场景。
 
 ### 常见组合模式
+组件可以灵活组合使用，构建复杂的UI界面：
 
-#### 复杂卡片组件
-```typescript
-<Card>
-  <Column gap="$md">
-    <Row distribution="space-between">
-      <Text type="title-md">卡片标题</Text>
-      <Icon name="more" />
-    </Row>
-    <Text>卡片描述内容</Text>
-    <Row distribution="space-between" alignment="center-center">
-      <Text type="body-sm">更新时间</Text>
-      <Button variant="primary">操作</Button>
-    </Row>
-  </Column>
-</Card>
-```
-
-#### 响应式布局
-```typescript
-<Column gap="$lg">
-  {/* 桌面端水平排列，移动端垂直排列 */}
-  <Row className="md:hidden" gap="$md">
-    <StatCard />
-    <StatCard />
-  </Row>
-  <Column className="hidden md:block" gap="$md">
-    <StatCard />
-    <StatCard />
-  </Column>
-</Column>
-```
+- **复杂卡片组件**：使用Column + Row + Box的组合
+- **响应式布局**：结合条件渲染实现不同屏幕尺寸的布局
+- **导航栏**：Row + Box的组合实现头部导航
+- **列表页面**：Column + Row的组合实现搜索结果等列表界面
 
 ---
 
