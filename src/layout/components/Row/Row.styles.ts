@@ -22,7 +22,7 @@ export const generateRowStyles = (props: RowProps) => {
     margin: 0;
 
     /* 自定义样式和className支持 */
-    ${props.style ? css(props.style) : ''}
+    ${props.style ? css(props.style as any) : ''}
     ${props.className ? '' : ''}
   `;
 };

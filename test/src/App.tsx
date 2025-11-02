@@ -31,20 +31,7 @@ function App() {
             >
               组件测试
             </button>
-            <button
-              onClick={() => setShowTokens(true)}
-              style={{
-                padding: '8px 16px',
-                backgroundColor: showTokens ? '#007bff' : 'transparent',
-                color: showTokens ? 'white' : '#007bff',
-                border: `1px solid #007bff`,
-                borderRadius: '4px',
-                cursor: 'pointer',
-                fontSize: '14px'
-              }}
-            >
-              Design Tokens
-            </button>
+
           </Row>
         </Row>
       </Box>
@@ -142,7 +129,7 @@ function App() {
                     width="60%"
                     height="60%"
                     radius="8px"
-                    style={{ color: 'white', fontSize: '14px', fontWeight: 'bold'}}
+                    style={{ color: 'white', fontSize: '14px', fontWeight: 'bold' }}
                   >
                     ZStack
                   </Box>
@@ -171,7 +158,7 @@ function App() {
                     width="50%"
                     height="50%"
                     radius="6px"
-                    style={{ color: 'white', fontSize: '12px', fontWeight: 'bold'}}
+                    style={{ color: 'white', fontSize: '12px', fontWeight: 'bold' }}
                   >
                     顶层
                   </Box>
@@ -202,7 +189,7 @@ function App() {
           {/* ZStack Alignment 测试 */}
           <section style={{ marginBottom: '40px' }}>
             <h2 style={{ color: '#495057', marginBottom: '16px' }}>ZStack Alignment 测试</h2>
-            <Row gap="16px" wrap="wrap">
+            <Row gap="16px" wrap="true">
               {/* Top 行 */}
               <Column gap="12px" width="160px">
                 <h4 style={{ margin: 0, color: '#495057' }}>Top Left</h4>
