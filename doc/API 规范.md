@@ -147,7 +147,9 @@ Figma 对应：**Auto Layout (Vertical)**
 
 ### Props
 
-继承 `<Box>` 的全部属性，无需额外属性。
+继承 `<Box>` 的全部属性，但**不支持 `distribution` 属性**。
+
+**设计说明**：Column 为垂直布局容器，在垂直方向上子元素依次排列，distribution 属性（控制主轴对齐）在垂直布局中的实际意义有限。如果需要控制子元素在垂直方向上的间距分布，建议使用 `gap` 属性或通过嵌套布局实现。
 
 | 属性 | 类型 | 默认值 | 对应 Figma | 示例 | 说明 |
 |------|------|--------|------------|------|------|
@@ -190,6 +192,7 @@ Figma 对应：**Auto Layout (Horizontal)**
 | `minWidth`/`maxWidth` | `string \| null` | `null` | Min/Max Width | `minWidth="200px" maxWidth="400px"` | 最小/最大宽度约束 |
 | `minHeight`/`maxHeight` | `string \| null` | `null` | Min/Max Height | `minHeight="100px" maxHeight="300px"` | 最小/最大高度约束 |
 | `alignment` | `'top-left' \| 'top-center' \| 'top-right' \| 'center-left' \| 'center-center' \| 'center-right' \| 'bottom-left' \| 'bottom-center' \| 'bottom-right'` | `'top-left'` | Align | `alignment="center-center"` | 子元素在Row中的对齐方式 |
+| `distribution` | `'pack' \| 'center' \| 'space' \| 'space-between'` | `'pack'` | Distribute | `distribution="space-between"` | 子元素在水平方向上的分布方式 |
 | `gap` | `string` | `'0'` | Item Spacing | `gap="$md"` | 子元素间距 |
 | `padding` | `string` | `'0'` | Padding | `padding="$lg"` | 内边距（支持方向控制） |
 | `fill` | `string \| null` | `null` | Fill | `fill="$surface"` | 填充色（null表示无背景色） |
@@ -198,7 +201,7 @@ Figma 对应：**Auto Layout (Horizontal)**
 | `strokeStyle` | `'solid' \| 'dashed' \| 'dotted' \| 'double' \| 'groove' \| 'ridge' \| 'inset' \| 'outset' \| null` | `null` | Stroke Style | `strokeStyle="dashed"` | 边框样式（支持方向控制） |
 | `radius` | `string \| null` | `null` | Corner Radius | `radius="$md"` | 圆角（null表示无圆角） |
 | `opacity` | `string \| null` | `null` | Opacity | `opacity="0.8"` | 透明度（null表示无透明度设置） |
-| `overflow` | `'visible' \| 'hidden' \| 'scroll' \| 'auto'` | `'auto'` | Overflow | `overflow="auto"` | 内容溢出处理方式（默认垂直自动滚动，hidden隐藏，visible显示，scroll总是显示滚动条） |
+| `overflow` | `'visible' \| 'hidden' \| 'scroll' \| 'auto'` | `'auto'` | Overflow | `overflow="auto"` | 内容溢出处理方式（默认水平自动滚动，hidden隐藏，visible显示，scroll总是显示滚动条） |
 
 
 ---
@@ -213,7 +216,9 @@ Figma 对应：**Frame with Absolute Positioning**
 
 ### Props
 
-继承 `<Box>` 的全部属性，无需额外属性。
+继承 `<Box>` 的大部分属性，但**移除了 `gap` 和 `distribution` 属性**。
+
+**设计说明**：ZStack 为层叠布局容器，子元素通过绝对定位进行层叠排列。`gap` 属性（控制子元素间距）和 `distribution` 属性（控制子元素分布方式）在层叠布局中没有实际意义，因此被移除。子元素的位置通过各自的 `alignment` 属性或绝对定位来控制。
 
 | 属性 | 类型 | 默认值 | 对应 Figma | 示例 | 说明 |
 |------|------|--------|------------|------|------|
