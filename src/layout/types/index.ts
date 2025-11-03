@@ -106,7 +106,7 @@ export interface CSSConfig {
   flexWrap?: string;
 }
 
-// 默认配置
+// 基础默认配置
 export const DEFAULTS = {
   width: 'hug',
   height: 'hug',
@@ -125,4 +125,24 @@ export const DEFAULTS = {
   maxWidth: null,
   minHeight: null,
   maxHeight: null,
+} as const;
+
+// 组件特定的默认配置
+export const COMPONENT_DEFAULTS = {
+  box: {
+    ...DEFAULTS,
+    alignment: 'top-left' as const,
+  },
+  column: {
+    ...DEFAULTS,
+    alignment: 'top-center' as const, // 顶部开始，水平居中
+  },
+  row: {
+    ...DEFAULTS,
+    alignment: 'center-left' as const, // 垂直居中，左侧开始
+  },
+  zstack: {
+    ...DEFAULTS,
+    alignment: 'center-center' as const, // 完全居中
+  },
 } as const;

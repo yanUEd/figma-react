@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ZStackProps } from '../../types';
 import { generateCompleteCSS } from '../../utils/cssMapper';
-import { Alignment } from '../../types';
+import { Alignment, COMPONENT_DEFAULTS } from '../../types';
 
 // 子元素对齐映射 - 纯绝对定位实现
 const childAlignmentMap: Record<Alignment, { top?: string; right?: string; bottom?: string; left?: string; transform?: string }> = {
@@ -53,8 +53,10 @@ export const StyledZStackChild = styled.div<{
   z-index: ${({ zIndex }) => zIndex};
 
   /* 统一的alignment定位处理 */
-  ${({ alignment = 'top-left' }) => {
-    const alignmentStyles = childAlignmentMap[alignment as Alignment] || childAlignmentMap['top-left'];
+  ${({ alignment }) => {
+    const defaultAlignment = COMPONENT_DEFAULTS.zstack.alignment;
+    const finalAlignment = alignment || defaultAlignment;
+    const alignmentStyles = childAlignmentMap[finalAlignment as Alignment] || childAlignmentMap[defaultAlignment];
     return css`
       ${alignmentStyles.top !== undefined ? css`top: ${alignmentStyles.top};` : ''}
       ${alignmentStyles.right !== undefined ? css`right: ${alignmentStyles.right};` : ''}

@@ -1,10 +1,15 @@
-import { Alignment, Distribution, Overflow, WidthHeight, CSSConfig } from '../types';
+import { Alignment, Distribution, Overflow, WidthHeight, CSSConfig, COMPONENT_DEFAULTS } from '../types';
 import { parseToken, parseColorToken, parseSizeToken, parseSpacingToken, parseOpacityToken, getStrokeDefaults } from './tokenUtils';
 import { parseDirection, generatePaddingCSS, generateBorderCSS, generateBorderRadiusCSS } from './directionParser';
 
-// 映射alignment到CSS属性
-export const mapAlignment = (alignment: Alignment): { alignItems: string; justifyContent: string } => {
-  const alignmentMap: Record<Alignment, { alignItems: string; justifyContent: string }> = {
+// 映射alignment到CSS属性 - 需要根据容器类型分别处理
+export const mapAlignment = (
+  alignment: Alignment,
+  containerType: 'box' | 'column' | 'row' | 'zstack'
+): { alignItems: string; justifyContent: string } => {
+
+  // Row 和 Box (默认垂直布局) 使用标准映射
+  const rowAlignmentMap: Record<Alignment, { alignItems: string; justifyContent: string }> = {
     'top-left': { alignItems: 'flex-start', justifyContent: 'flex-start' },
     'top-center': { alignItems: 'flex-start', justifyContent: 'center' },
     'top-right': { alignItems: 'flex-start', justifyContent: 'flex-end' },
@@ -16,7 +21,64 @@ export const mapAlignment = (alignment: Alignment): { alignItems: string; justif
     'bottom-right': { alignItems: 'flex-end', justifyContent: 'flex-end' },
   };
 
-  return alignmentMap[alignment] || alignmentMap['top-left'];
+  // Column 需要交换 alignItems 和 justifyContent，因为主轴是垂直的
+  const columnAlignmentMap: Record<Alignment, { alignItems: string; justifyContent: string }> = {
+    'top-left': { alignItems: 'center', justifyContent: 'flex-start' },      // 水平居中，垂直顶部
+    'top-center': { alignItems: 'center', justifyContent: 'flex-start' },    // 水平居中，垂直顶部
+    'top-right': { alignItems: 'center', justifyContent: 'flex-start' },     // 水平居中，垂直顶部
+    'center-left': { alignItems: 'center', justifyContent: 'center' },        // 水平居中，垂直居中
+    'center-center': { alignItems: 'center', justifyContent: 'center' },      // 水平居中，垂直居中
+    'center-right': { alignItems: 'center', justifyContent: 'center' },       // 水平居中，垂直居中
+    'bottom-left': { alignItems: 'center', justifyContent: 'flex-end' },     // 水平居中，垂直底部
+    'bottom-center': { alignItems: 'center', justifyContent: 'flex-end' },    // 水平居中，垂直底部
+    'bottom-right': { alignItems: 'center', justifyContent: 'flex-end' },     // 水平居中，垂直底部
+  };
+
+  // ZStack 不使用 flexbox，返回空映射
+  const zstackAlignmentMap: Record<Alignment, { alignItems: string; justifyContent: string }> = {
+    'top-left': { alignItems: 'flex-start', justifyContent: 'flex-start' },
+    'top-center': { alignItems: 'center', justifyContent: 'flex-start' },
+    'top-right': { alignItems: 'flex-end', justifyContent: 'flex-start' },
+    'center-left': { alignItems: 'flex-start', justifyContent: 'center' },
+    'center-center': { alignItems: 'center', justifyContent: 'center' },
+    'center-right': { alignItems: 'flex-end', justifyContent: 'center' },
+    'bottom-left': { alignItems: 'flex-start', justifyContent: 'flex-end' },
+    'bottom-center': { alignItems: 'center', justifyContent: 'flex-end' },
+    'bottom-right': { alignItems: 'flex-end', justifyContent: 'flex-end' },
+  };
+
+  switch (containerType) {
+    case 'column':
+      return columnAlignmentMap[alignment] || columnAlignmentMap['top-left'];
+    case 'row':
+      return rowAlignmentMap[alignment] || rowAlignmentMap['top-left'];
+    case 'zstack':
+      return zstackAlignmentMap[alignment] || zstackAlignmentMap['center-center'];
+    case 'box':
+    default:
+      return rowAlignmentMap[alignment] || rowAlignmentMap['top-left'];
+  }
+};
+
+// 获取组件特定的默认alignment
+export const getDefaultAlignment = (containerType: 'box' | 'column' | 'row' | 'zstack'): Alignment => {
+  const defaultAlignment = (() => {
+    switch (containerType) {
+      case 'box':
+        return COMPONENT_DEFAULTS.box.alignment;
+      case 'column':
+        return COMPONENT_DEFAULTS.column.alignment;
+      case 'row':
+        return COMPONENT_DEFAULTS.row.alignment;
+      case 'zstack':
+        return COMPONENT_DEFAULTS.zstack.alignment;
+      default:
+        return 'top-left';
+    }
+  })();
+
+  console.log(`getDefaultAlignment(${containerType}):`, defaultAlignment);
+  return defaultAlignment;
 };
 
 // 映射distribution到CSS属性
@@ -100,11 +162,15 @@ export const generateCSSConfig = (
     strokeStyle,
   });
 
+  // 获取组件特定的默认alignment
+  const defaultAlignment = getDefaultAlignment(containerType);
+  const finalAlignment = alignment || defaultAlignment;
+
   // 基础CSS配置
   const config: CSSConfig = {
     display: 'flex',
     flexDirection: getFlexDirection(containerType),
-    ...mapAlignment(alignment || 'top-left'),
+    ...mapAlignment(finalAlignment, containerType),
   };
 
   // ZStack特殊处理：不应用flexbox布局属性

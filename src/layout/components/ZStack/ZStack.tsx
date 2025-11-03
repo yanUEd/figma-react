@@ -18,7 +18,7 @@ const childAlignmentMap: Record<Alignment, { top?: string; right?: string; botto
 
 // 获取对齐样式
 const getAlignmentStyles = (alignment?: Alignment) => {
-  const alignmentStyles = childAlignmentMap[alignment as Alignment] || childAlignmentMap['top-left'];
+  const alignmentStyles = childAlignmentMap[alignment as Alignment] || childAlignmentMap['center-center'];
   return alignmentStyles;
 };
 
@@ -45,9 +45,8 @@ export const ZStack = forwardRef<HTMLDivElement, ZStackProps>(
 
         // ZStack子元素alignment逻辑：
         // - 如果子元素明确设置了alignment，使用子元素的alignment
-        // - 如果子元素没有设置alignment，继承容器的alignment
-        // 这样所有元素都统一处理，无需特殊的背景检测
-        const alignment = childProps.alignment !== undefined ? childProps.alignment : layoutProps.alignment;
+        // - 如果子元素没有设置alignment，使用ZStack的默认alignment (center-center)
+        const effectiveAlignment = childProps.alignment !== undefined ? childProps.alignment : 'center-center';
 
         // 从子元素中移除alignment属性，避免子元素自己处理alignment
         const { alignment: childAlignment, ...childPropsClean } = childProps;
@@ -59,7 +58,7 @@ export const ZStack = forwardRef<HTMLDivElement, ZStackProps>(
             ...childPropsClean.style,
             position: 'absolute',
             zIndex: index + 1,
-            ...getAlignmentStyles(alignment)
+            ...getAlignmentStyles(effectiveAlignment)
           }
         });
 
