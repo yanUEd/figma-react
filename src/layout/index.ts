@@ -56,4 +56,4 @@ export {
 } from './utils/cssMapper';
 
 // 导出默认配置
-export { DEFAULTS, COMPONENT_DEFAULTS } from './types';
+export { DEFAULTS, COMPONENT_DEFAULTS, LAYOUT_DEFAULTS, getComponentDefaults } from './config';

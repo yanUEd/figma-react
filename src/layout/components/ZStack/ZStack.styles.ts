@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ZStackProps } from '../../types';
 import { generateCompleteCSS } from '../../utils/cssMapper';
-import { Alignment, COMPONENT_DEFAULTS } from '../../types';
+import { Alignment, COMPONENT_DEFAULTS } from '../../config';
 
 // 子元素对齐映射 - 纯绝对定位实现
 const childAlignmentMap: Record<Alignment, { top?: string; right?: string; bottom?: string; left?: string; transform?: string }> = {

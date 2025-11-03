@@ -1,4 +1,4 @@
-import { Alignment, Distribution, Overflow, WidthHeight, CSSConfig, COMPONENT_DEFAULTS } from '../types';
+import { Alignment, Distribution, Overflow, WidthHeight, CSSConfig, COMPONENT_DEFAULTS, LAYOUT_DEFAULTS } from '../config';
 import { parseToken, parseColorToken, parseSizeToken, parseSpacingToken, parseOpacityToken, getStrokeDefaults } from './tokenUtils';
 import { parseDirection, generatePaddingCSS, generateBorderCSS, generateBorderRadiusCSS } from './directionParser';
 
@@ -166,6 +166,18 @@ export const generateCSSConfig = (
   const defaultAlignment = getDefaultAlignment(containerType);
   const finalAlignment = alignment || defaultAlignment;
 
+  // 获取组件特定的默认gap - 简化逻辑
+  const componentDefaults = COMPONENT_DEFAULTS[containerType as keyof typeof COMPONENT_DEFAULTS];
+  let defaultGap: string | undefined;
+
+  if (componentDefaults && typeof componentDefaults === 'object' && 'gap' in componentDefaults) {
+    defaultGap = (componentDefaults as any).gap;
+  } else {
+    defaultGap = LAYOUT_DEFAULTS.gap;
+  }
+
+  const finalGap = gap || defaultGap;
+
   // 基础CSS配置
   const config: CSSConfig = {
     display: 'flex',
@@ -190,7 +202,7 @@ export const generateCSSConfig = (
   if (maxHeight) config.maxHeight = parseSizeToken(maxHeight) || undefined;
 
   // 布局属性
-  if (gap) config.gap = parseSpacingToken(gap) || undefined;
+  if (finalGap) config.gap = parseSpacingToken(finalGap) || undefined;
   if (distribution && containerType !== 'column' && containerType !== 'zstack') {
     config.justifyContent = mapDistribution(distribution);
   }

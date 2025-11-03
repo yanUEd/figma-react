@@ -1,12 +1,27 @@
-import { useState } from 'react'
-import { Box, Column, Row, ZStack } from '@figma-react/layout'
+import { Box, Column, Row, ZStack, LAYOUT_DEFAULTS } from '@figma-react/layout'
 
 function App() {
+
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
       <h1 style={{ marginBottom: '32px', color: '#333', textAlign: 'center' }}>
         Figma Layout 组件默认值测试
       </h1>
+
+      {/* 配置展示面板 */}
+      <div style={{ marginBottom: '32px', padding: '16px', background: '#f8f9fa', borderRadius: '8px' }}>
+        <h3 style={{ color: '#495057', marginBottom: '12px' }}>当前配置文件默认值</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', fontSize: '14px' }}>
+          <div><strong>基础间距:</strong> {LAYOUT_DEFAULTS.gap}</div>
+          <div><strong>基础内边距:</strong> {LAYOUT_DEFAULTS.padding}</div>
+          <div><strong>Box对齐:</strong> {LAYOUT_DEFAULTS.box.alignment}</div>
+          <div><strong>Column对齐:</strong> {LAYOUT_DEFAULTS.column.alignment}</div>
+          <div><strong>Row对齐:</strong> {LAYOUT_DEFAULTS.row.alignment}</div>
+          <div><strong>Row换行:</strong> {LAYOUT_DEFAULTS.row.wrap}</div>
+          <div><strong>ZStack对齐:</strong> {LAYOUT_DEFAULTS.zstack.alignment}</div>
+          <div><strong>ZStack溢出:</strong> {LAYOUT_DEFAULTS.zstack.overflow || LAYOUT_DEFAULTS.overflow}</div>
+        </div>
+      </div>
 
       <div style={{ marginBottom: '48px' }}>
         <h2 style={{ color: '#495057', marginBottom: '16px' }}>Column 组件 - 默认 top-center</h2>
@@ -15,7 +30,7 @@ function App() {
           height="200px"
           fill="#f0f8ff"
           padding="16px"
-          gap="12px"
+          // 不设置gap，使用配置文件中的默认值
           strokeColor="#007bff"
           strokeWeight="2px"
           radius="8px"
@@ -39,7 +54,7 @@ function App() {
           height="120px"
           fill="#f8fff0"
           padding="16px"
-          gap="16px"
+          // 不设置gap，使用配置文件中的默认值
           strokeColor="#28a745"
           strokeWeight="2px"
           radius="8px"
@@ -98,15 +113,37 @@ function App() {
       </div>
 
       <div style={{ padding: '20px', background: '#e9ecef', borderRadius: '8px' }}>
-        <h3 style={{ color: '#495057', marginBottom: '12px' }}>新的默认值总结：</h3>
-        <ul style={{ color: '#666', lineHeight: '1.6' }}>
+        <h3 style={{ color: '#495057', marginBottom: '12px' }}>配置文件说明：</h3>
+
+        <h4 style={{ color: '#495057', marginTop: '16px', marginBottom: '8px' }}>📋 当前默认值：</h4>
+        <ul>
           <li><strong>Column</strong>: top-center (顶部开始 + 水平居中)</li>
           <li><strong>Row</strong>: center-left (垂直居中 + 左侧开始)</li>
           <li><strong>ZStack</strong>: center-center (完全居中)</li>
+          <li><strong>基础间距</strong>: 0 (可在配置文件中修改)</li>
         </ul>
-        <p style={{ color: '#28a745', marginTop: '12px', fontWeight: 'bold' }}>
-          ✅ 这些默认值更符合实际使用场景，减少了手动设置alignment的需求
-        </p>
+
+        <h4 style={{ color: '#495057', marginTop: '16px', marginBottom: '8px' }}>⚙️ 配置文件特性：</h4>
+        <ul>
+          <li><strong>静态配置</strong>: 所有默认值在 `src/layout/config.ts` 文件中</li>
+          <li><strong>手动修改</strong>: 直接编辑配置文件来调整默认值</li>
+          <li><strong>设计 tokens</strong>: 支持 '$spacing-sm'、'$color-primary' 等 token 格式</li>
+          <li><strong>类型安全</strong>: 完整的 TypeScript 类型支持</li>
+          <li><strong>向后兼容</strong>: 保持现有 API 不变</li>
+        </ul>
+
+        <h4 style={{ color: '#495057', marginTop: '16px', marginBottom: '8px' }}>🔧 如何修改默认值：</h4>
+        <div style={{ background: '#f8f9fa', padding: '12px', borderRadius: '4px', fontFamily: 'monospace', fontSize: '13px' }}>
+          <div>// 在 src/layout/config.ts 中修改</div>
+          <div>gap: '8px', // 改为 8px 间距</div>
+          <div>gap: '$spacing-md', // 或使用设计 token</div>
+        </div>
+
+        <div style={{ marginTop: '16px', padding: '12px', background: '#d4edda', borderRadius: '4px', border: '1px solid #c3e6cb' }}>
+          <p style={{ color: '#155724', margin: 0, fontWeight: 'bold' }}>
+            ✅ 简单的配置文件让默认值管理变得直观，便于项目定制！
+          </p>
+        </div>
       </div>
     </div>
   )
