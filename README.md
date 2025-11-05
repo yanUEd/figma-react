@@ -1,4 +1,4 @@
-# @figma-react/layout
+# figma-react-layout
 
 **AI-native Design-as-Code layout components inspired by Figma Auto Layout**
 
@@ -16,11 +16,11 @@
 ## 📦 安装
 
 ```bash
-npm install @figma-react/layout
+npm install figma-react-layout
 # 或
-yarn add @figma-react/layout
+yarn add figma-react-layout
 # 或
-pnpm add @figma-react/layout
+pnpm add figma-react-layout
 ```
 
 ### 依赖要求
@@ -31,7 +31,7 @@ pnpm add @figma-react/layout
 ## 🔧 基础使用
 
 ```jsx
-import { Box, Column, Row, ZStack } from '@figma-react/layout';
+import { Box, Column, Row, ZStack } from 'figma-react-layout';
 
 function App() {
   return (
@@ -347,7 +347,7 @@ function App() {
 ### 1. 安装依赖
 
 ```bash
-npm install @figma-react/layout styled-components
+npm install figma-react-layout styled-components
 ```
 
 ### 2. 设置 CSS 变量（可选）
@@ -378,7 +378,7 @@ npm install @figma-react/layout styled-components
 ### 3. 开始使用
 
 ```jsx
-import { Box, Column, Row } from '@figma-react/layout';
+import { Box, Column, Row } from 'figma-react-layout';
 
 // 直接替换原有的 div 和样式
 function MyComponent() {
@@ -404,4 +404,4 @@ MIT License
 
 - [API 规范文档](./doc/API%20规范.md)
 - [GitHub 仓库](https://github.com/figma-react/layout)
-- [npm 包](https://www.npmjs.com/package/@figma-react/layout)
+- [npm 包](https://www.npmjs.com/package/figma-react-layout)
