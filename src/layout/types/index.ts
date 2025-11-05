@@ -47,21 +47,60 @@ export interface BaseLayoutProps {
   children?: React.ReactNode;
 }
 
+// Transient props (内部使用，$前缀避免传递到DOM)
+export interface BaseLayoutTransientProps {
+  // 布局属性
+  $width?: WidthHeight;
+  $height?: WidthHeight;
+  $minWidth?: string | null;
+  $maxWidth?: string | null;
+  $minHeight?: string | null;
+  $maxHeight?: string | null;
+  $alignment?: Alignment;
+  $gap?: SpacingToken;
+  $padding?: string;
+  $overflow?: Overflow;
+
+  // 视觉属性
+  $fill?: ColorToken | null;
+  $strokeColor?: ColorToken | null;
+  $strokeWeight?: string | null;
+  $strokeStyle?: StrokeStyle;
+  $radius?: BorderRadiusToken | null;
+  $opacity?: string | null;
+}
+
 // Box 组件Props
 export interface BoxProps extends BaseLayoutProps {
   distribution?: Distribution;
 }
 
+// Box Transient props
+export interface BoxTransientProps extends BaseLayoutTransientProps {
+  $distribution?: Distribution;
+}
+
 // Column 组件Props (继承Box，但不需要distribution)
 export interface ColumnProps extends Omit<BoxProps, 'distribution'> {}
+
+// Column Transient props (直接继承BaseLayoutTransientProps)
+export interface ColumnTransientProps extends BaseLayoutTransientProps {}
 
 // Row 组件Props
 export interface RowProps extends BoxProps {
   wrap?: Wrap;
 }
 
+// Row Transient props
+export interface RowTransientProps extends BoxTransientProps {
+  $wrap?: Wrap;
+}
+
 // ZStack 组件Props (继承Box，但不需要gap和distribution)
 export interface ZStackProps extends Omit<BoxProps, 'gap' | 'distribution'> {}
+
+// ZStack Transient props
+export interface ZStackTransientProps extends Omit<BoxTransientProps, '$gap' | '$distribution'> {}
 
 // 方向控制相关类型
 export interface DirectionValue {

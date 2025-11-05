@@ -3,11 +3,16 @@ import { StyleSheetManager } from 'styled-components';
 
 // 配置shouldForwardProp过滤不需要的属性
 const shouldForwardProp = (prop: string) => {
+  // 过滤所有$前缀的transient props
+  if (prop.startsWith('$')) {
+    return false;
+  }
+
   // 允许的标准HTML属性
   const allowedHTMLProps = [
     'id', 'className', 'style', 'title', 'alt', 'tabIndex',
     'aria-label', 'aria-labelledby', 'aria-describedby', 'role',
-    'data-testid', 'data-*'
+    'data-testid'
   ];
 
   // 如果是允许的HTML属性，或者以data-开头的自定义属性，则forward
@@ -15,22 +20,20 @@ const shouldForwardProp = (prop: string) => {
     return true;
   }
 
-  // 过滤掉CSS属性和我们的内部属性
+  // 过滤掉我们的内部属性（保持向后兼容）
   const blockedProps = [
-    // CSS属性
-    'width', 'height', 'minWidth', 'maxWidth', 'minHeight', 'maxHeight',
-    'backgroundColor', 'color', 'padding', 'margin', 'border', 'borderRadius',
-    'borderTop', 'borderBottom', 'borderLeft', 'borderRight',
-    'borderWidth', 'borderStyle', 'borderColor',
-    'position', 'top', 'left', 'right', 'bottom', 'zIndex', 'overflow',
-    'display', 'flexDirection', 'flex', 'flexWrap', 'flexBasis',
-    'justifyContent', 'alignItems', 'alignContent', 'gap',
-    'boxShadow', 'opacity', 'transform', 'transition',
-    'fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'textAlign',
-    'textDecoration', 'whiteSpace',
     // 我们的内部属性
     'distribution', 'alignment', 'strokeColor', 'strokeWeight', 'strokeStyle',
-    'radius', 'fill'
+    'radius', 'fill', 'gap', 'padding', 'wrap',
+    // CSS属性（作为备选过滤）
+    'width', 'height', 'minWidth', 'maxWidth', 'minHeight', 'maxHeight',
+    'backgroundColor', 'color', 'margin', 'border', 'borderRadius',
+    'position', 'top', 'left', 'right', 'bottom', 'zIndex',
+    'display', 'flexDirection', 'flex', 'flexWrap', 'flexBasis',
+    'justifyContent', 'alignItems', 'alignContent',
+    'boxShadow', 'opacity', 'transform', 'transition',
+    'fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'textAlign',
+    'textDecoration', 'whiteSpace'
   ];
 
   return !blockedProps.includes(prop);

@@ -1,17 +1,36 @@
 import styled, { css } from 'styled-components';
-import { RowProps } from '../../types';
+import { RowTransientProps } from '../../types';
 import { generateCompleteCSS } from '../../utils/cssMapper';
 
 // 生成Row样式
-export const generateRowStyles = (props: RowProps) => {
-  const { wrap, ...otherProps } = props;
+export const generateRowStyles = (props: RowTransientProps) => {
+  // 将$前缀的props转换为普通props供CSS生成器使用
+  const cssProps = {
+    width: props.$width,
+    height: props.$height,
+    minWidth: props.$minWidth,
+    maxWidth: props.$maxWidth,
+    minHeight: props.$minHeight,
+    maxHeight: props.$maxHeight,
+    alignment: props.$alignment,
+    gap: props.$gap,
+    padding: props.$padding,
+    overflow: props.$overflow,
+    fill: props.$fill,
+    strokeColor: props.$strokeColor,
+    strokeWeight: props.$strokeWeight,
+    strokeStyle: props.$strokeStyle,
+    radius: props.$radius,
+    opacity: props.$opacity,
+    distribution: props.$distribution,
+  };
 
   return css`
-    ${generateCompleteCSS(otherProps, 'row')}
+    ${generateCompleteCSS(cssProps, 'row')}
 
     /* Row特定样式 */
     flex-direction: row;
-    ${wrap === 'true' ? css`
+    ${props.$wrap === 'true' ? css`
       flex-wrap: wrap;
     ` : css`
       flex-wrap: nowrap;
@@ -20,13 +39,11 @@ export const generateRowStyles = (props: RowProps) => {
     /* 重置默认样式 */
     box-sizing: border-box;
     margin: 0;
-
-    /* 自定义样式和className支持 */
-    ${props.style ? css(props.style as any) : ''}
-    ${props.className ? '' : ''}
   `;
 };
 
-export const StyledRow = styled.div<RowProps>`
+export const StyledRow = styled.div.withConfig({
+  shouldForwardProp: (prop) => !prop.startsWith('$'),
+})<RowTransientProps>`
   ${({ ...props }) => generateRowStyles(props)}
 `;

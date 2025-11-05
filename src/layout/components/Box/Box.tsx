@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { BoxProps } from '../../types';
+import { BoxProps, BoxTransientProps } from '../../types';
 import { StyledBox } from './Box.styles';
 
 // Box组件 - 基础容器组件
@@ -10,16 +10,53 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
       children,
       className,
       style,
-      ...layoutProps
+      width,
+      height,
+      minWidth,
+      maxWidth,
+      minHeight,
+      maxHeight,
+      alignment,
+      gap,
+      padding,
+      overflow,
+      fill,
+      strokeColor,
+      strokeWeight,
+      strokeStyle,
+      radius,
+      opacity,
+      distribution,
     },
     ref
   ) => {
+    // 构建transient props
+    const transientProps: BoxTransientProps = {
+      $width: width,
+      $height: height,
+      $minWidth: minWidth,
+      $maxWidth: maxWidth,
+      $minHeight: minHeight,
+      $maxHeight: maxHeight,
+      $alignment: alignment,
+      $gap: gap,
+      $padding: padding,
+      $overflow: overflow,
+      $fill: fill,
+      $strokeColor: strokeColor,
+      $strokeWeight: strokeWeight,
+      $strokeStyle: strokeStyle,
+      $radius: radius,
+      $opacity: opacity,
+      $distribution: distribution,
+    };
+
     return (
       <StyledBox
         ref={ref}
         className={className}
         style={style}
-        {...layoutProps}
+        {...transientProps}
       >
         {children}
       </StyledBox>

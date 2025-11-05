@@ -23,15 +23,15 @@ export const mapAlignment = (
 
   // Column 需要交换 alignItems 和 justifyContent，因为主轴是垂直的
   const columnAlignmentMap: Record<Alignment, { alignItems: string; justifyContent: string }> = {
-    'top-left': { alignItems: 'center', justifyContent: 'flex-start' },      // 水平居中，垂直顶部
-    'top-center': { alignItems: 'center', justifyContent: 'flex-start' },    // 水平居中，垂直顶部
-    'top-right': { alignItems: 'center', justifyContent: 'flex-start' },     // 水平居中，垂直顶部
-    'center-left': { alignItems: 'center', justifyContent: 'center' },        // 水平居中，垂直居中
-    'center-center': { alignItems: 'center', justifyContent: 'center' },      // 水平居中，垂直居中
-    'center-right': { alignItems: 'center', justifyContent: 'center' },       // 水平居中，垂直居中
-    'bottom-left': { alignItems: 'center', justifyContent: 'flex-end' },     // 水平居中，垂直底部
-    'bottom-center': { alignItems: 'center', justifyContent: 'flex-end' },    // 水平居中，垂直底部
-    'bottom-right': { alignItems: 'center', justifyContent: 'flex-end' },     // 水平居中，垂直底部
+    'top-left': { alignItems: 'flex-start', justifyContent: 'flex-start' },     // 水平左对齐，垂直顶部
+    'top-center': { alignItems: 'center', justifyContent: 'flex-start' },       // 水平居中，垂直顶部
+    'top-right': { alignItems: 'flex-end', justifyContent: 'flex-start' },      // 水平右对齐，垂直顶部
+    'center-left': { alignItems: 'flex-start', justifyContent: 'center' },       // 水平左对齐，垂直居中
+    'center-center': { alignItems: 'center', justifyContent: 'center' },         // 水平居中，垂直居中
+    'center-right': { alignItems: 'flex-end', justifyContent: 'center' },        // 水平右对齐，垂直居中
+    'bottom-left': { alignItems: 'flex-start', justifyContent: 'flex-end' },     // 水平左对齐，垂直底部
+    'bottom-center': { alignItems: 'center', justifyContent: 'flex-end' },       // 水平居中，垂直底部
+    'bottom-right': { alignItems: 'flex-end', justifyContent: 'flex-end' },      // 水平右对齐，垂直底部
   };
 
   // ZStack 不使用 flexbox，返回空映射

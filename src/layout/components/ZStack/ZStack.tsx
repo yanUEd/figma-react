@@ -1,5 +1,5 @@
 import React, { forwardRef, Children, isValidElement, cloneElement } from 'react';
-import { ZStackProps } from '../../types';
+import { ZStackProps, ZStackTransientProps } from '../../types';
 import { StyledZStack } from './ZStack.styles';
 import { Alignment } from '../../types';
 
@@ -30,10 +30,43 @@ export const ZStack = forwardRef<HTMLDivElement, ZStackProps>(
       children,
       className,
       style,
-      ...layoutProps
+      width,
+      height,
+      minWidth,
+      maxWidth,
+      minHeight,
+      maxHeight,
+      alignment,
+      padding,
+      overflow,
+      fill,
+      strokeColor,
+      strokeWeight,
+      strokeStyle,
+      radius,
+      opacity,
     },
     ref
   ) => {
+    // 构建transient props
+    const transientProps: ZStackTransientProps = {
+      $width: width,
+      $height: height,
+      $minWidth: minWidth,
+      $maxWidth: maxWidth,
+      $minHeight: minHeight,
+      $maxHeight: maxHeight,
+      $alignment: alignment,
+      $padding: padding,
+      $overflow: overflow,
+      $fill: fill,
+      $strokeColor: strokeColor,
+      $strokeWeight: strokeWeight,
+      $strokeStyle: strokeStyle,
+      $radius: radius,
+      $opacity: opacity,
+    };
+
     const childrenArray = Children.toArray(children);
 
   // 为每个子元素包装定位容器，先定义的元素在上层（更高的z-index）
@@ -71,7 +104,7 @@ export const ZStack = forwardRef<HTMLDivElement, ZStackProps>(
         ref={ref}
         className={className}
         style={style}
-        {...layoutProps}
+        {...transientProps}
       >
         {styledChildren}
       </StyledZStack>
