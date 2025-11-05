@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2025-11-05
+
+### Fixed
+- **GitHub 链接**: 更新 package.json 中的仓库链接到正确的地址 (https://github.com/yanUEd/figma-react)
+- **文档链接**: 修复 homepage 和 issues 链接指向正确的项目地址
+
 ## [1.0.2] - 2025-11-05
 
 ### Fixed

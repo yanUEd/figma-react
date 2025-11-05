@@ -1,6 +1,6 @@
 {
   "name": "figma-react-layout",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "AI-native Design-as-Code layout components inspired by Figma Auto Layout",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -57,11 +57,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/figma-react/layout.git"
+    "url": "git+https://github.com/yanUEd/figma-react.git"
   },
-  "homepage": "https://github.com/figma-react/layout#readme",
+  "homepage": "https://github.com/yanUEd/figma-react#readme",
   "bugs": {
-    "url": "https://github.com/figma-react/layout/issues"
+    "url": "https://github.com/yanUEd/figma-react/issues"
   },
   "publishConfig": {
     "access": "public"
