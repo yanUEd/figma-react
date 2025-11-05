@@ -77,7 +77,6 @@ export const getDefaultAlignment = (containerType: 'box' | 'column' | 'row' | 'z
     }
   })();
 
-  console.log(`getDefaultAlignment(${containerType}):`, defaultAlignment);
   return defaultAlignment;
 };
 

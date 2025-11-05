@@ -51,7 +51,6 @@ export const parseOpacityToken = (value: string | null): string | null => {
   // 验证透明度值
   const num = parseFloat(value);
   if (isNaN(num) || num < 0 || num > 1) {
-    console.warn(`Invalid opacity value: ${value}. Should be between 0 and 1.`);
     return null;
   }
 
