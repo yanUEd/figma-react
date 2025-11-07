@@ -20,7 +20,7 @@ export type BorderRadiusToken = 'none' | 'sm' | 'md' | 'lg' | string;
 export type StrokeStyle = 'solid' | 'dashed' | 'dotted' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' | null;
 
 // 基础组件Props接口
-export interface BaseLayoutProps {
+export interface BaseLayoutProps extends React.HTMLAttributes<HTMLDivElement> {
   // 布局属性
   width?: WidthHeight;
   height?: WidthHeight;
