@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ColumnTransientProps } from '../../types';
 import { generateCompleteCSS } from '../../utils/cssMapper';
-import { columnShouldForwardProp } from '../../../utils/propFilter';
+import { columnShouldForwardProp, v6ShouldForwardProp } from '../../../utils/propFilter';
 
 // 生成Column样式
 export const generateColumnStyles = (props: ColumnTransientProps) => {
@@ -38,7 +38,9 @@ export const generateColumnStyles = (props: ColumnTransientProps) => {
 };
 
 export const StyledColumn = styled.div.withConfig({
-  shouldForwardProp: columnShouldForwardProp,
+  shouldForwardProp: (prop, defaultValidator) => {
+    return v6ShouldForwardProp(prop, defaultValidator as any);
+  },
 })<ColumnTransientProps>`
   ${({ ...props }) => generateColumnStyles(props)}
 `;

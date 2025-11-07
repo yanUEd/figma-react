@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { ZStackTransientProps } from '../../types';
 import { generateCompleteCSS } from '../../utils/cssMapper';
 import { Alignment, COMPONENT_DEFAULTS } from '../../config';
-import { zstackShouldForwardProp } from '../../../utils/propFilter';
+import { zstackShouldForwardProp, v6ShouldForwardProp } from '../../../utils/propFilter';
 
 // 子元素对齐映射 - 纯绝对定位实现
 const childAlignmentMap: Record<Alignment, { top?: string; right?: string; bottom?: string; left?: string; transform?: string }> = {
@@ -57,7 +57,9 @@ export const generateZStackStyles = (props: ZStackTransientProps) => {
 
 // ZStack容器
 export const StyledZStack = styled.div.withConfig({
-  shouldForwardProp: zstackShouldForwardProp,
+  shouldForwardProp: (prop, defaultValidator) => {
+    return v6ShouldForwardProp(prop, defaultValidator as any);
+  },
 })<ZStackTransientProps>`
   ${({ ...props }) => generateZStackStyles(props)}
 `;

@@ -169,6 +169,64 @@ export const smartShouldForwardProp = (prop: string): boolean => {
 };
 
 /**
+ * 适用于 styled-components v6 的 shouldForwardProp
+ * v6 中 shouldForwardProp 的签名是 (prop, defaultValidatorFn) => boolean
+ * 需要调用 defaultValidatorFn 来决定是否转发 HTML 标准属性
+ *
+ * @param prop 属性名
+ * @param defaultValidatorFn 默认验证器（v6 提供的）
+ * @returns 是否应该转发该属性到 DOM
+ */
+export const v6ShouldForwardProp = (
+  prop: string,
+  defaultValidatorFn?: (prop: string) => boolean
+): boolean => {
+  if (!prop || typeof prop !== 'string') return true;
+
+  // 1. 过滤 transient props
+  if (prop.startsWith('$')) {
+    return false;
+  }
+
+  // 2. 过滤内部布局属性
+  if (isInternalLayoutProp(prop)) {
+    return false;
+  }
+
+  // 3. 允许所有事件处理器（v6 必须显式声明）
+  if (isEventProp(prop)) {
+    return true;
+  }
+
+  // 4. 允许数据属性
+  if (isDataProp(prop)) {
+    return true;
+  }
+
+  // 5. 允许 ARIA 属性
+  if (isAriaProp(prop)) {
+    return true;
+  }
+
+  // 6. 允许 React 标准属性（使用默认验证器或自定义检查）
+  try {
+    if (typeof defaultValidatorFn === 'function') {
+      return defaultValidatorFn(prop);
+    }
+  } catch (e) {
+    // 如果默认验证器调用失败，继续使用白名单检查
+  }
+
+  // 7. 如果没有默认验证器但有 React 标准属性，检查白名单
+  if (isReactStandardProp(prop)) {
+    return true;
+  }
+
+  // 8. 对未知属性采取保守策略，允许转发
+  return true;
+};
+
+/**
  * 创建针对特定组件的 shouldForwardProp
  * @param additionalInternalProps 额外的内部属性黑名单
  * @returns shouldForwardProp 函数

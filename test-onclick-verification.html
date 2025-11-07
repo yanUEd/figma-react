@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onClick Verification Test</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./dist/index.umd.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .test-box {
+            padding: 20px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>onClick Verification Test</h1>
+    <div id="root"></div>
+    <div id="results"></div>
+
+    <script type="text/babel">
+        const { createElement } = React;
+        const { useState, useEffect } = React;
+
+        function TestApp() {
+            const [results, setResults] = useState([]);
+
+            const addResult = (message, isSuccess = true) => {
+                setResults(prev => [...prev, { message, isSuccess }]);
+            };
+
+            useEffect(() => {
+                // Check if FigmaReactLayout is loaded
+                if (typeof FigmaReactLayout === 'undefined') {
+                    addResult('❌ FigmaReactLayout is not loaded!', false);
+                    return;
+                }
+                addResult('✅ FigmaReactLayout is loaded', true);
+
+                // Check Box component
+                if (typeof FigmaReactLayout.Box === 'undefined') {
+                    addResult('❌ Box component is not available', false);
+                    return;
+                }
+                addResult('✅ Box component is available', true);
+
+                addResult('✅ All components loaded successfully', true);
+            }, []);
+
+            const testBoxClick = () => {
+                addResult('🖱️ Box clicked! (onClick handler called)');
+            };
+
+            return createElement('div', null,
+                createElement('h2', null, 'Test Results:'),
+                createElement('div', { style: { marginBottom: '20px' } },
+                    results.map((result, index) =>
+                        createElement('div', {
+                            key: index,
+                            className: `result ${result.isSuccess ? 'success' : 'error'}`
+                        }, result.message)
+                    )
+                ),
+
+                createElement('h2', null, 'Click Test:'),
+                createElement('p', null, 'Click the box below:'),
+                createElement(FigmaReactLayout.Box, {
+                    className: 'test-box',
+                    width: '200px',
+                    height: '100px',
+                    fill: '#2196F3',
+                    radius: '8px',
+                    alignment: 'center-center',
+                    onClick: testBoxClick
+                }, 'Click Me!'),
+
+                createElement('p', { style: { marginTop: '20px', fontSize: '14px', color: '#666' } },
+                    'If you can click the blue box and see "Box clicked!" above, then onClick is working correctly.'
+                )
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(createElement(TestApp));
+    </script>
+</body>
+</html>

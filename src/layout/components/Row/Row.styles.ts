@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { RowTransientProps } from '../../types';
 import { generateCompleteCSS } from '../../utils/cssMapper';
-import { rowShouldForwardProp } from '../../../utils/propFilter';
+import { rowShouldForwardProp, v6ShouldForwardProp } from '../../../utils/propFilter';
 
 // 生成Row样式
 export const generateRowStyles = (props: RowTransientProps) => {
@@ -44,7 +44,9 @@ export const generateRowStyles = (props: RowTransientProps) => {
 };
 
 export const StyledRow = styled.div.withConfig({
-  shouldForwardProp: rowShouldForwardProp,
+  shouldForwardProp: (prop, defaultValidator) => {
+    return v6ShouldForwardProp(prop, defaultValidator as any);
+  },
 })<RowTransientProps>`
   ${({ ...props }) => generateRowStyles(props)}
 `;

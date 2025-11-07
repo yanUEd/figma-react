@@ -1,3 +1,5 @@
+/// <reference types="jest" />
+
 import '@testing-library/jest-dom';
 
 // Mock IntersectionObserver for layout testing

@@ -34,6 +34,9 @@ pnpm add figma-react-layout
 import { Box, Column, Row, ZStack } from 'figma-react-layout';
 
 function App() {
+  const handleLogin = () => console.log('Login clicked');
+  const handleCancel = () => console.log('Cancel clicked');
+
   return (
     <Column gap="$md" padding="$xl" alignment="center-center" minHeight="100vh">
       <Text type="title-lg">欢迎回来</Text>
@@ -44,13 +47,219 @@ function App() {
       </Column>
 
       <Row gap="$sm">
-        <Button variant="secondary">取消</Button>
-        <Button variant="primary">登录</Button>
+        <Button variant="secondary" onClick={handleCancel}>取消</Button>
+        <Button variant="primary" onClick={handleLogin}>登录</Button>
       </Row>
     </Column>
   );
 }
 ```
+
+## 🖱️ onClick 事件处理
+
+所有 figma-react-layout 组件都支持标准的 React onClick 事件处理器，就像普通 HTML 元素一样。
+
+### 基础用法
+
+```jsx
+import { Box, Column, Row, ZStack } from 'figma-react-layout';
+
+function ClickableExample() {
+  const handleBoxClick = (event) => {
+    console.log('Box clicked!', event.target);
+  };
+
+  const handleColumnClick = () => {
+    alert('Column container clicked!');
+  };
+
+  const handleRowClick = (event) => {
+    event.stopPropagation(); // 阻止事件冒泡
+    console.log('Row coordinates:', event.clientX, event.clientY);
+  };
+
+  return (
+    <Column gap="20px" padding="20px">
+      {/* Box 点击 */}
+      <Box
+        width="200px"
+        height="80px"
+        fill="blue"
+        onClick={handleBoxClick}
+        style={{ cursor: 'pointer' }}
+      >
+        Click this Box
+      </Box>
+
+      {/* Column 点击 */}
+      <Column
+        width="250px"
+        height="120px"
+        fill="green"
+        onClick={handleColumnClick}
+        alignment="center-center"
+        gap="10px"
+      >
+        <Box height="30px" fill="white">Item 1</Box>
+        <Box height="30px" fill="lightgreen">Item 2</Box>
+      </Column>
+
+      {/* Row 点击 */}
+      <Row
+        width="300px"
+        height="80px"
+        fill="orange"
+        onClick={handleRowClick}
+        alignment="center-center"
+        gap="20px"
+      >
+        <Box width="60px" height="50px" fill="white">Left</Box>
+        <Box width="60px" height="50px" fill="yellow">Right</Box>
+      </Row>
+
+      {/* ZStack 点击 */}
+      <ZStack
+        width="200px"
+        height="120px"
+        onClick={() => console.log('ZStack clicked')}
+      >
+        <Box position="absolute" width="100%" height="100%" fill="lightgray" />
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          width="100px"
+          height="60px"
+          fill="purple"
+          alignment="center-center"
+        >
+          Stacked
+        </Box>
+      </ZStack>
+    </Column>
+  );
+}
+```
+
+### 高级用法
+
+#### 使用 useCallback 优化性能
+
+```jsx
+import React, { useCallback } from 'react';
+
+function OptimizedExample({ data }) {
+  const handleClick = useCallback((event) => {
+    console.log('Clicked with data:', data);
+  }, [data]);
+
+  return (
+    <Box
+      width="200px"
+      height="80px"
+      fill="blue"
+      onClick={handleClick}
+    >
+      Optimized Click
+    </Box>
+  );
+}
+```
+
+#### 嵌套组件事件处理
+
+```jsx
+function NestedExample() {
+  const handleParentClick = () => console.log('Parent clicked');
+  const handleChildClick = (event) => {
+    event.stopPropagation(); // 阻止触发父级点击
+    console.log('Child clicked only');
+  };
+
+  return (
+    <Column
+      width="300px"
+      height="150px"
+      fill="lightblue"
+      onClick={handleParentClick}
+    >
+      <Box
+        height="50px"
+        fill="red"
+        onClick={handleChildClick}
+      >
+        Child (only fires this)
+      </Box>
+      <Box
+        height="50px"
+        fill="green"
+      >
+        Child (bubbles to parent)
+      </Box>
+    </Column>
+  );
+}
+```
+
+#### 可访问性支持
+
+```jsx
+function AccessibleExample() {
+  const handleClick = () => console.log('Accessible click');
+
+  return (
+    <Box
+      width="200px"
+      height="60px"
+      fill="blue"
+      onClick={handleClick}
+      tabIndex={0}
+      role="button"
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          handleClick();
+        }
+      }}
+      style={{ cursor: 'pointer' }}
+    >
+      Accessible Button
+    </Box>
+  );
+}
+```
+
+### 测试 onClick 处理器
+
+```jsx
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Box } from 'figma-react-layout';
+
+test('onClick handler works', () => {
+  const handleClick = jest.fn();
+
+  render(
+    <Box
+      data-testid="clickable-box"
+      onClick={handleClick}
+    >
+      Click me
+    </Box>
+  );
+
+  const box = screen.getByTestId('clickable-box');
+  fireEvent.click(box);
+
+  expect(handleClick).toHaveBeenCalledTimes(1);
+});
+```
+
+**详细文档**: 参见 [onClick 事件处理指南](doc/onClick-handlers.md)
+
+**在线示例**:
+- [onClick 示例页面](test/onClick-examples.html)
+- [onClick 调试面板](test/onClick-debug.html)
 
 ## 📚 组件文档
 

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onClick Debug - figma-react-layout</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="../dist/index.umd.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .debug-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .test-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .test-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .result-log {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+
+        .component-demo {
+            margin: 15px 0;
+        }
+
+        .instruction {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .success {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+
+        .error {
+            color: #f44336;
+            font-weight: 600;
+        }
+
+        .clickable-style {
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .clickable-style:hover {
+            transform: scale(1.02);
+        }
+
+        .clickable-style:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <div class="header">
+            <h1>🔍 onClick Event Debug Panel</h1>
+            <p>Test onClick handlers on all figma-react-layout components</p>
+        </div>
+
+        <div class="content">
+            <div id="root"></div>
+
+            <div class="instruction">
+                <strong>Instructions:</strong> Click on each component below. Each click should:
+                <ol>
+                    <li>Trigger the component's onClick handler</li>
+                    <li>Show a success message in the result log</li>
+                    <li>Update the click counter</li>
+                </ol>
+                If clicks don't register, check the browser console for errors.
+            </div>
+        </div>
+    </div>
+
+    <script type="text/babel">
+        const { createElement } = React;
+        const { useState, useEffect } = React;
+
+        // Event logger utility
+        const useEventLogger = () => {
+            const [logs, setLogs] = useState([]);
+
+            const log = (message, isError = false) => {
+                const timestamp = new Date().toLocaleTimeString();
+                const logEntry = `[${timestamp}] ${message}`;
+                setLogs(prev => [...prev.slice(-9), logEntry]);
+
+                if (isError) {
+                    console.error(logEntry);
+                } else {
+                    console.log(logEntry);
+                }
+            };
+
+            return { logs, log };
+        };
+
+        // Counter component for tracking clicks
+        const ClickCounter = ({ label, count, color }) => (
+            createElement('div', {
+                style: {
+                    padding: '10px 15px',
+                    background: color,
+                    color: 'white',
+                    borderRadius: '6px',
+                    fontWeight: 'bold',
+                    margin: '5px',
+                    display: 'inline-block'
+                }
+            }, `${label}: ${count} clicks`)
+        );
+
+        // Main debug app
+        function OnClickDebugApp() {
+            const { logs, log } = useEventLogger();
+            const [clickCounts, setClickCounts] = useState({
+                box: 0,
+                column: 0,
+                row: 0,
+                zstack: 0,
+                nested: 0
+            });
+
+            const createClickHandler = (componentName) => (event) => {
+                log(`✅ SUCCESS: ${componentName} onClick fired! Event type: ${event.type}`);
+                setClickCounts(prev => ({
+                    ...prev,
+                    [componentName]: prev[componentName] + 1
+                }));
+            };
+
+            const createErrorHandler = (componentName) => () => {
+                log(`❌ ERROR: ${componentName} failed to fire onClick`, true);
+            };
+
+            useEffect(() => {
+                log('🚀 onClick Debug Panel initialized');
+                log('📋 Click on the components below to test onClick handlers');
+
+                // Check if FigmaReactLayout is available
+                if (typeof window.FigmaReactLayout === 'undefined') {
+                    log('❌ ERROR: FigmaReactLayout not found in window object', true);
+                } else {
+                    log('✅ FigmaReactLayout loaded successfully');
+                }
+            }, []);
+
+            return (
+                createElement('div', null,
+                    // Click counters
+                    createElement('div', {
+                        style: {
+                            background: '#fff3e0',
+                            padding: '20px',
+                            borderRadius: '8px',
+                            marginBottom: '20px',
+                            textAlign: 'center'
+                        }
+                    },
+                        createElement('h3', null, '🎯 Click Counters'),
+                        createElement('div', { style: { display: 'flex', flexWrap: 'wrap', justifyContent: 'center' } },
+                            createElement(ClickCounter, { label: 'Box', count: clickCounts.box, color: '#2196F3' }),
+                            createElement(ClickCounter, { label: 'Column', count: clickCounts.column, color: '#4CAF50' }),
+                            createElement(ClickCounter, { label: 'Row', count: clickCounts.row, color: '#FF9800' }),
+                            createElement(ClickCounter, { label: 'ZStack', count: clickCounts.zstack, color: '#9C27B0' }),
+                            createElement(ClickCounter, { label: 'Nested', count: clickCounts.nested, color: '#F44336' })
+                        )
+                    ),
+
+                    // Box Test
+                    createElement('div', { className: 'test-section' },
+                        createElement('h3', { className: 'test-title' }, '📦 Box Component onClick Test'),
+                        createElement(FigmaReactLayout.Box, {
+                            width: '100%',
+                            height: '80px',
+                            fill: '#e3f2fd',
+                            radius: '8px',
+                            alignment: 'center-center',
+                            onClick: createClickHandler('Box'),
+                            className: 'clickable-style',
+                            'data-testid': 'debug-box'
+                        }, 'Click this Box component'),
+
+                        createElement('button', {
+                            onClick: createErrorHandler('Box'),
+                            style: { marginTop: '10px', marginLeft: '10px' }
+                        }, 'Test Error Handler')
+                    ),
+
+                    // Column Test
+                    createElement('div', { className: 'test-section' },
+                        createElement('h3', { className: 'test-title' }, '📋 Column Component onClick Test'),
+                        createElement(FigmaReactLayout.Column, {
+                            width: '100%',
+                            height: '150px',
+                            fill: '#e8f5e8',
+                            radius: '8px',
+                            alignment: 'center-center',
+                            gap: '10px',
+                            onClick: createClickHandler('Column'),
+                            className: 'clickable-style',
+                            'data-testid': 'debug-column'
+                        },
+                            createElement(FigmaReactLayout.Box, {
+                                height: '40px',
+                                fill: '#4CAF50',
+                                radius: '6px',
+                                alignment: 'center-center'
+                            }, 'Top Item'),
+                            createElement(FigmaReactLayout.Box, {
+                                height: '40px',
+                                fill: '#2196F3',
+                                radius: '6px',
+                                alignment: 'center-center'
+                            }, 'Bottom Item')
+                        )
+                    ),
+
+                    // Row Test
+                    createElement('div', { className: 'test-section' },
+                        createElement('h3', { className: 'test-title' }, '➡️ Row Component onClick Test'),
+                        createElement(FigmaReactLayout.Row, {
+                            width: '100%',
+                            height: '100px',
+                            fill: '#fff3e0',
+                            radius: '8px',
+                            alignment: 'center-center',
+                            gap: '15px',
+                            onClick: createClickHandler('Row'),
+                            className: 'clickable-style',
+                            'data-testid': 'debug-row'
+                        },
+                            createElement(FigmaReactLayout.Box, {
+                                width: '80px',
+                                height: '60px',
+                                fill: '#FF9800',
+                                radius: '6px',
+                                alignment: 'center-center'
+                            }, 'Left'),
+                            createElement(FigmaReactLayout.Box, {
+                                width: '80px',
+                                height: '60px',
+                                fill: '#9C27B0',
+                                radius: '6px',
+                                alignment: 'center-center'
+                            }, 'Right')
+                        )
+                    ),
+
+                    // ZStack Test
+                    createElement('div', { className: 'test-section' },
+                        createElement('h3', { className: 'test-title' }, '📚 ZStack Component onClick Test'),
+                        createElement(FigmaReactLayout.ZStack, {
+                            width: '100%',
+                            height: '150px',
+                            onClick: createClickHandler('ZStack'),
+                            className: 'clickable-style',
+                            'data-testid': 'debug-zstack'
+                        },
+                            // Background layer
+                            createElement(FigmaReactLayout.Box, {
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                fill: '#f3e5f5',
+                                radius: '8px'
+                            }),
+                            // Content layer
+                            createElement(FigmaReactLayout.Box, {
+                                position: 'absolute',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                width: '120px',
+                                height: '60px',
+                                fill: '#9C27B0',
+                                radius: '6px',
+                                alignment: 'center-center'
+                            }, 'Stacked')
+                        )
+                    ),
+
+                    // Nested Test
+                    createElement('div', { className: 'test-section' },
+                        createElement('h3', { className: 'test-title' }, '🎯 Nested Components onClick Test'),
+                        createElement(FigmaReactLayout.Box, {
+                            width: '100%',
+                            height: '120px',
+                            fill: '#ffebee',
+                            radius: '8px',
+                            onClick: createClickHandler('Nested'),
+                            className: 'clickable-style',
+                            'data-testid': 'debug-nested'
+                        },
+                            createElement(FigmaReactLayout.Row, {
+                                width: '100%',
+                                height: '100%',
+                                alignment: 'center-center',
+                                gap: '20px',
+                                padding: '20px'
+                            },
+                                createElement(FigmaReactLayout.Box, {
+                                    width: '60px',
+                                    height: '60px',
+                                    fill: '#F44336',
+                                    radius: '50%'
+                                }),
+                                createElement(FigmaReactLayout.Box, {
+                                    width: '60px',
+                                    height: '60px',
+                                    fill: '#2196F3',
+                                    radius: '50%'
+                                })
+                            )
+                        )
+                    ),
+
+                    // Event Log
+                    createElement('div', { className: 'test-section' },
+                        createElement('h3', { className: 'test-title' }, '📝 Event Log'),
+                        createElement('div', { className: 'result-log' },
+                            logs.length > 0 ? logs.join('\n') : 'No events logged yet...'
+                        ),
+                        createElement('button', {
+                            onClick: () => {
+                                setLogs([]);
+                                log('📋 Log cleared');
+                            },
+                            style: { marginTop: '10px' }
+                        }, 'Clear Log')
+                    ),
+
+                    // Debug Info
+                    createElement('div', { className: 'test-section' },
+                        createElement('h3', { className: 'test-title' }, '🔧 Debug Information'),
+                        createElement('div', { style: { fontFamily: 'monospace', fontSize: '14px' } },
+                            createElement('div', null, `FigmaReactLayout available: ${typeof window.FigmaReactLayout !== 'undefined' ? '✅ Yes' : '❌ No'}`),
+                            createElement('div', null, `React version: ${React.version}`),
+                            createElement('div', null, `Browser: ${navigator.userAgent.split(' ')[0]}`),
+                            createElement('div', null, `Total events logged: ${logs.length}`)
+                        )
+                    )
+                )
+            );
+        }
+
+        // Render the debug app
+        const root = document.getElementById('root');
+        const appElement = createElement(OnClickDebugApp);
+        ReactDOM.render(appElement, root);
+    </script>
+</body>
+</html>

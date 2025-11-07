@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { BoxTransientProps } from '../../types';
 import { generateCompleteCSS } from '../../utils/cssMapper';
-import { boxShouldForwardProp } from '../../../utils/propFilter';
+import { boxShouldForwardProp, v6ShouldForwardProp } from '../../../utils/propFilter';
 
 // 生成动态样式
 export const generateBoxStyles = (props: BoxTransientProps) => {
@@ -37,7 +37,9 @@ export const generateBoxStyles = (props: BoxTransientProps) => {
 
 // 基础Box样式组件
 export const StyledBox = styled.div.withConfig({
-  shouldForwardProp: boxShouldForwardProp,
+  shouldForwardProp: (prop, defaultValidator) => {
+    return v6ShouldForwardProp(prop, defaultValidator as any);
+  },
 })<BoxTransientProps>`
   ${({ ...props }) => generateBoxStyles(props)}
 `;
