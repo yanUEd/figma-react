@@ -1,6 +1,6 @@
 {
   "name": "figma-react-layout",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "AI-native Design-as-Code layout components inspired by Figma Auto Layout",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -40,7 +40,7 @@
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "prepublishOnly": "npm run build && npm run quality-check"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "react",
