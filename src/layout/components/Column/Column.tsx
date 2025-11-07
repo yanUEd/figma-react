@@ -26,6 +26,7 @@ export const Column = forwardRef<HTMLDivElement, ColumnProps>(
       strokeStyle,
       radius,
       opacity,
+      ...restProps
     },
     ref
   ) => {
@@ -55,6 +56,7 @@ export const Column = forwardRef<HTMLDivElement, ColumnProps>(
         className={className}
         style={style}
         {...transientProps}
+        {...restProps}
       >
         {children}
       </StyledColumn>

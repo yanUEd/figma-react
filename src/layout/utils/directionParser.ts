@@ -5,7 +5,7 @@ import { ParsedDirection } from '../types';
 export const parseDirection = (input: string): ParsedDirection => {
   const result: ParsedDirection = {};
 
-  if (!input) return result;
+  if (!input || typeof input !== 'string') return result;
 
   // 如果输入中没有冒号，则认为是全方向设置
   if (!input.includes(':')) {

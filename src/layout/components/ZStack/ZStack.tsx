@@ -45,6 +45,7 @@ export const ZStack = forwardRef<HTMLDivElement, ZStackProps>(
       strokeStyle,
       radius,
       opacity,
+      ...restProps
     },
     ref
   ) => {
@@ -105,6 +106,7 @@ export const ZStack = forwardRef<HTMLDivElement, ZStackProps>(
         className={className}
         style={style}
         {...transientProps}
+        {...restProps}
       >
         {styledChildren}
       </StyledZStack>

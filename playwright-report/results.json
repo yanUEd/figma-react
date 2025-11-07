@@ -1,0 +1,4833 @@
+{
+  "config": {
+    "configFile": "/Users/zhou/Documents/GitHub/figma-react/playwright.config.ts",
+    "rootDir": "/Users/zhou/Documents/GitHub/figma-react/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "playwright-report/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/zhou/Documents/GitHub/figma-react/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/zhou/Documents/GitHub/figma-react/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/zhou/Documents/GitHub/figma-react/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/zhou/Documents/GitHub/figma-react/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/zhou/Documents/GitHub/figma-react/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/zhou/Documents/GitHub/figma-react/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/zhou/Documents/GitHub/figma-react/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/zhou/Documents/GitHub/figma-react/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/zhou/Documents/GitHub/figma-react/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/zhou/Documents/GitHub/figma-react/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 5,
+    "webServer": {
+      "command": "npm run serve-dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "accessibility.spec.ts",
+      "file": "accessibility.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Accessibility E2E Tests",
+          "file": "accessibility.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Page has proper heading hierarchy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-a8de9872e675b827a9e4",
+              "file": "accessibility.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Test sections are properly structured",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-2ff52ee56a7ae6d8b395",
+              "file": "accessibility.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements are keyboard accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-f74f22873cd71398462e",
+              "file": "accessibility.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "Color contrast and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-a6bb7ba94af390bc2df4",
+              "file": "accessibility.spec.ts",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "Content is accessible via ARIA attributes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-c0521f3163f2b6c159a0",
+              "file": "accessibility.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Page structure is semantic",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-cdc2747bf4c067cdb663",
+              "file": "accessibility.spec.ts",
+              "line": 85,
+              "column": 3
+            },
+            {
+              "title": "Page has proper heading hierarchy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-2c78021af2e11040d6ca",
+              "file": "accessibility.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Test sections are properly structured",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-7940b10567ed991aba3d",
+              "file": "accessibility.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements are keyboard accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-e8ddf7ac08a3e817758d",
+              "file": "accessibility.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "Color contrast and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-2bee243dde699a67c8b1",
+              "file": "accessibility.spec.ts",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "Content is accessible via ARIA attributes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-2bbe2331440321d8e85f",
+              "file": "accessibility.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Page structure is semantic",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-7b7a92eaeb43d9f8bc3e",
+              "file": "accessibility.spec.ts",
+              "line": 85,
+              "column": 3
+            },
+            {
+              "title": "Page has proper heading hierarchy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-8b8e1b2ff91ec52aae05",
+              "file": "accessibility.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Test sections are properly structured",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-4fa7c16f6efeca468878",
+              "file": "accessibility.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements are keyboard accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-e4186cc361274418f0e9",
+              "file": "accessibility.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "Color contrast and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-0b4b9606c99d641fc532",
+              "file": "accessibility.spec.ts",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "Content is accessible via ARIA attributes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-00df48bb331a3558d409",
+              "file": "accessibility.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Page structure is semantic",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-ab5daf1a807e3a17be23",
+              "file": "accessibility.spec.ts",
+              "line": 85,
+              "column": 3
+            },
+            {
+              "title": "Page has proper heading hierarchy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-bf1826deb7784087b35d",
+              "file": "accessibility.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Test sections are properly structured",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-eb23e6e1f613f0d1e41a",
+              "file": "accessibility.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements are keyboard accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-eeb1190337b08b78e6fc",
+              "file": "accessibility.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "Color contrast and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-4876de869e6dbae09378",
+              "file": "accessibility.spec.ts",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "Content is accessible via ARIA attributes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-9c603cdfad71c2e0d066",
+              "file": "accessibility.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Page structure is semantic",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-c7426a888bfc323fe846",
+              "file": "accessibility.spec.ts",
+              "line": 85,
+              "column": 3
+            },
+            {
+              "title": "Page has proper heading hierarchy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-7eeec153814a39d8ed3c",
+              "file": "accessibility.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Test sections are properly structured",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-91a5813dad99064f107a",
+              "file": "accessibility.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements are keyboard accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-63582b30bcb15860abbe",
+              "file": "accessibility.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "Color contrast and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-8014710cb3164968767e",
+              "file": "accessibility.spec.ts",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "Content is accessible via ARIA attributes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-78d1229b4972af41ad63",
+              "file": "accessibility.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Page structure is semantic",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-ac97a35810a1d180e382",
+              "file": "accessibility.spec.ts",
+              "line": 85,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "React App Accessibility Tests",
+          "file": "accessibility.spec.ts",
+          "line": 100,
+          "column": 6,
+          "specs": [
+            {
+              "title": "React app has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-fdcf309ff85fd446c51d",
+              "file": "accessibility.spec.ts",
+              "line": 105,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls are properly labeled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-74d60b787029c2a51df4",
+              "file": "accessibility.spec.ts",
+              "line": 112,
+              "column": 3
+            },
+            {
+              "title": "Form elements have proper labels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-68cd3e4157e8b12708b1",
+              "file": "accessibility.spec.ts",
+              "line": 126,
+              "column": 3
+            },
+            {
+              "title": "Content structure is logical and navigable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-ac11f216804ebb1b9b9d",
+              "file": "accessibility.spec.ts",
+              "line": 136,
+              "column": 3
+            },
+            {
+              "title": "Progress information is accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-fbae086ef60374788296",
+              "file": "accessibility.spec.ts",
+              "line": 148,
+              "column": 3
+            },
+            {
+              "title": "Keyboard navigation works properly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-8f838f66ce9052137dfc",
+              "file": "accessibility.spec.ts",
+              "line": 162,
+              "column": 3
+            },
+            {
+              "title": "Visual hierarchy and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-66a84b34c12a1d3b95a0",
+              "file": "accessibility.spec.ts",
+              "line": 184,
+              "column": 3
+            },
+            {
+              "title": "React app has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-c12a543da6c0c1aa16e1",
+              "file": "accessibility.spec.ts",
+              "line": 105,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls are properly labeled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-21385606dd1646d1919b",
+              "file": "accessibility.spec.ts",
+              "line": 112,
+              "column": 3
+            },
+            {
+              "title": "Form elements have proper labels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-1d503e222f5a1533aaf8",
+              "file": "accessibility.spec.ts",
+              "line": 126,
+              "column": 3
+            },
+            {
+              "title": "Content structure is logical and navigable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-e784436d6bbdf57363e5",
+              "file": "accessibility.spec.ts",
+              "line": 136,
+              "column": 3
+            },
+            {
+              "title": "Progress information is accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-d08467c256161922d9a2",
+              "file": "accessibility.spec.ts",
+              "line": 148,
+              "column": 3
+            },
+            {
+              "title": "Keyboard navigation works properly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-bbe449300072f67d471b",
+              "file": "accessibility.spec.ts",
+              "line": 162,
+              "column": 3
+            },
+            {
+              "title": "Visual hierarchy and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-4f5e5dbecf49c1a0b956",
+              "file": "accessibility.spec.ts",
+              "line": 184,
+              "column": 3
+            },
+            {
+              "title": "React app has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-a547d044e3db39591926",
+              "file": "accessibility.spec.ts",
+              "line": 105,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls are properly labeled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-ef3bc8c7980961cb7809",
+              "file": "accessibility.spec.ts",
+              "line": 112,
+              "column": 3
+            },
+            {
+              "title": "Form elements have proper labels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-704617d4fc5398133ff0",
+              "file": "accessibility.spec.ts",
+              "line": 126,
+              "column": 3
+            },
+            {
+              "title": "Content structure is logical and navigable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-d35849a87dce4e696dc0",
+              "file": "accessibility.spec.ts",
+              "line": 136,
+              "column": 3
+            },
+            {
+              "title": "Progress information is accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-eaabd76739daa45706d3",
+              "file": "accessibility.spec.ts",
+              "line": 148,
+              "column": 3
+            },
+            {
+              "title": "Keyboard navigation works properly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-67a9b26615de001ca42f",
+              "file": "accessibility.spec.ts",
+              "line": 162,
+              "column": 3
+            },
+            {
+              "title": "Visual hierarchy and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-122c7f28bfec0f67273a",
+              "file": "accessibility.spec.ts",
+              "line": 184,
+              "column": 3
+            },
+            {
+              "title": "React app has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-1e33a025195691cda903",
+              "file": "accessibility.spec.ts",
+              "line": 105,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls are properly labeled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-2c590232a8635e3efa81",
+              "file": "accessibility.spec.ts",
+              "line": 112,
+              "column": 3
+            },
+            {
+              "title": "Form elements have proper labels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-cfbc696d8188684afa3c",
+              "file": "accessibility.spec.ts",
+              "line": 126,
+              "column": 3
+            },
+            {
+              "title": "Content structure is logical and navigable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-02b1d70b2f2a67680260",
+              "file": "accessibility.spec.ts",
+              "line": 136,
+              "column": 3
+            },
+            {
+              "title": "Progress information is accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-667e63cb695fa2f5246e",
+              "file": "accessibility.spec.ts",
+              "line": 148,
+              "column": 3
+            },
+            {
+              "title": "Keyboard navigation works properly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-a9efa33b60d8fbf8b8e7",
+              "file": "accessibility.spec.ts",
+              "line": 162,
+              "column": 3
+            },
+            {
+              "title": "Visual hierarchy and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-d57280707b664c7406b1",
+              "file": "accessibility.spec.ts",
+              "line": 184,
+              "column": 3
+            },
+            {
+              "title": "React app has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-dd71de534b61edc300a7",
+              "file": "accessibility.spec.ts",
+              "line": 105,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls are properly labeled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-1de298e4b8b9704eff90",
+              "file": "accessibility.spec.ts",
+              "line": 112,
+              "column": 3
+            },
+            {
+              "title": "Form elements have proper labels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-5ee21f2c0c0afd38ec67",
+              "file": "accessibility.spec.ts",
+              "line": 126,
+              "column": 3
+            },
+            {
+              "title": "Content structure is logical and navigable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-0bbf403e1bcbe82cfdb1",
+              "file": "accessibility.spec.ts",
+              "line": 136,
+              "column": 3
+            },
+            {
+              "title": "Progress information is accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-de443ef0d0e39860b3d2",
+              "file": "accessibility.spec.ts",
+              "line": 148,
+              "column": 3
+            },
+            {
+              "title": "Keyboard navigation works properly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-e6c7c20d98aba2d4de10",
+              "file": "accessibility.spec.ts",
+              "line": 162,
+              "column": 3
+            },
+            {
+              "title": "Visual hierarchy and readability",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ddd864604af8a6a0198f-412130364a0dddea7919",
+              "file": "accessibility.spec.ts",
+              "line": 184,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "basic-components.spec.ts",
+      "file": "basic-components.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Basic Components E2E Tests",
+          "file": "basic-components.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "page loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-427170c29998296dca93",
+              "file": "basic-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "basic box component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-5a6655738d317bc36dae",
+              "file": "basic-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "basic row component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-b24c1fcfba10bb66e535",
+              "file": "basic-components.spec.ts",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "basic column component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-56ec7fcb623e6ced0612",
+              "file": "basic-components.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "layout scenarios are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-8dee9184afcd525a0df3",
+              "file": "basic-components.spec.ts",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "zstack component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-5b979195073a7dd910a4",
+              "file": "basic-components.spec.ts",
+              "line": 51,
+              "column": 3
+            },
+            {
+              "title": "zstack items are properly layered",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-5d332aa922fa8c6d31ac",
+              "file": "basic-components.spec.ts",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "test sections are properly styled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-7e3be3f78ec17ddddc20",
+              "file": "basic-components.spec.ts",
+              "line": 81,
+              "column": 3
+            },
+            {
+              "title": "container has proper layout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-212a5ccdbab4d6d0aba2",
+              "file": "basic-components.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "page loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-352855c86c47f99a9159",
+              "file": "basic-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "basic box component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-6f31a83c3a33bbcf26a3",
+              "file": "basic-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "basic row component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-8005d7ffd1ca58d55f7b",
+              "file": "basic-components.spec.ts",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "basic column component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-6fdcf4fdd1d470017396",
+              "file": "basic-components.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "layout scenarios are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-aeb4b26e307d1317fa01",
+              "file": "basic-components.spec.ts",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "zstack component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-7496a42516b6eacb78fd",
+              "file": "basic-components.spec.ts",
+              "line": 51,
+              "column": 3
+            },
+            {
+              "title": "zstack items are properly layered",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-778c61bf63e808e28813",
+              "file": "basic-components.spec.ts",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "test sections are properly styled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-ecbbc0515c9e70017acb",
+              "file": "basic-components.spec.ts",
+              "line": 81,
+              "column": 3
+            },
+            {
+              "title": "container has proper layout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-fa57b6b68a1ae559c3ab",
+              "file": "basic-components.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "page loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-5003feee47548e9bb98c",
+              "file": "basic-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "basic box component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-f5f8370bfdfd5ba5bfef",
+              "file": "basic-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "basic row component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-315d9db0c84493e260be",
+              "file": "basic-components.spec.ts",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "basic column component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-0b70554aad30672f7111",
+              "file": "basic-components.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "layout scenarios are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-31c0173d74514f41d545",
+              "file": "basic-components.spec.ts",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "zstack component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-53cf6e210448c16585a3",
+              "file": "basic-components.spec.ts",
+              "line": 51,
+              "column": 3
+            },
+            {
+              "title": "zstack items are properly layered",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-8f24c0d67ab21ca19b74",
+              "file": "basic-components.spec.ts",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "test sections are properly styled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-5a1a32ce755eb8676dc0",
+              "file": "basic-components.spec.ts",
+              "line": 81,
+              "column": 3
+            },
+            {
+              "title": "container has proper layout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-d8d5f41b286aa930be72",
+              "file": "basic-components.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "page loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-c49c8b7b8f90e40506cf",
+              "file": "basic-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "basic box component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-620dd1b9496de43c8ceb",
+              "file": "basic-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "basic row component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-1881dc8f85ba8676fc9b",
+              "file": "basic-components.spec.ts",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "basic column component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-6a68fa9e70653bb37f5d",
+              "file": "basic-components.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "layout scenarios are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-37ade08ef2af76069ddb",
+              "file": "basic-components.spec.ts",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "zstack component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-43ff228617bc27cf2887",
+              "file": "basic-components.spec.ts",
+              "line": 51,
+              "column": 3
+            },
+            {
+              "title": "zstack items are properly layered",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-852831c42530507e45ad",
+              "file": "basic-components.spec.ts",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "test sections are properly styled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-295f95318970d10dcb26",
+              "file": "basic-components.spec.ts",
+              "line": 81,
+              "column": 3
+            },
+            {
+              "title": "container has proper layout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-82345d00e25068453bdb",
+              "file": "basic-components.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "page loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-dbcb1847c08aed34bf4a",
+              "file": "basic-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "basic box component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-467b037bb6710538d0e8",
+              "file": "basic-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "basic row component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-a61bf67f78bbeb290880",
+              "file": "basic-components.spec.ts",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "basic column component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-50b60dbc2d5baf1a0f38",
+              "file": "basic-components.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "layout scenarios are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-74bb527a253468298cfe",
+              "file": "basic-components.spec.ts",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "zstack component is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-43ab15c2c6bcaba087d0",
+              "file": "basic-components.spec.ts",
+              "line": 51,
+              "column": 3
+            },
+            {
+              "title": "zstack items are properly layered",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-dd3df87e28b613906e4c",
+              "file": "basic-components.spec.ts",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "test sections are properly styled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-9dbabaeae4317269504a",
+              "file": "basic-components.spec.ts",
+              "line": 81,
+              "column": 3
+            },
+            {
+              "title": "container has proper layout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-7b1fd0d98023d0bd78c5",
+              "file": "basic-components.spec.ts",
+              "line": 93,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Accessibility E2E Tests",
+          "file": "basic-components.spec.ts",
+          "line": 101,
+          "column": 6,
+          "specs": [
+            {
+              "title": "page has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-39ec36272dcc7bc8ecd6",
+              "file": "basic-components.spec.ts",
+              "line": 106,
+              "column": 3
+            },
+            {
+              "title": "components have proper text content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-0b366e7fc8cdf2ea5b4d",
+              "file": "basic-components.spec.ts",
+              "line": 110,
+              "column": 3
+            },
+            {
+              "title": "page is responsive on different viewports",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-4c9f61513afa60cd7c8f",
+              "file": "basic-components.spec.ts",
+              "line": 119,
+              "column": 3
+            },
+            {
+              "title": "page has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-22eefe97b7095778ac1c",
+              "file": "basic-components.spec.ts",
+              "line": 106,
+              "column": 3
+            },
+            {
+              "title": "components have proper text content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-ec53da0ddfdb84515f0b",
+              "file": "basic-components.spec.ts",
+              "line": 110,
+              "column": 3
+            },
+            {
+              "title": "page is responsive on different viewports",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-49e7515441b8fac71fa7",
+              "file": "basic-components.spec.ts",
+              "line": 119,
+              "column": 3
+            },
+            {
+              "title": "page has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-56a9ec1477bc683ee73d",
+              "file": "basic-components.spec.ts",
+              "line": 106,
+              "column": 3
+            },
+            {
+              "title": "components have proper text content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-840b102661fa2638df34",
+              "file": "basic-components.spec.ts",
+              "line": 110,
+              "column": 3
+            },
+            {
+              "title": "page is responsive on different viewports",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-f66d100e25c770c25a03",
+              "file": "basic-components.spec.ts",
+              "line": 119,
+              "column": 3
+            },
+            {
+              "title": "page has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-286c4f73742c87b023f5",
+              "file": "basic-components.spec.ts",
+              "line": 106,
+              "column": 3
+            },
+            {
+              "title": "components have proper text content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-897851eb77a03518b589",
+              "file": "basic-components.spec.ts",
+              "line": 110,
+              "column": 3
+            },
+            {
+              "title": "page is responsive on different viewports",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-42fa749a07a405b933dc",
+              "file": "basic-components.spec.ts",
+              "line": 119,
+              "column": 3
+            },
+            {
+              "title": "page has proper heading structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-47a442707a40d3725e1e",
+              "file": "basic-components.spec.ts",
+              "line": 106,
+              "column": 3
+            },
+            {
+              "title": "components have proper text content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-c6037d840d78896e7d5b",
+              "file": "basic-components.spec.ts",
+              "line": 110,
+              "column": 3
+            },
+            {
+              "title": "page is responsive on different viewports",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-010dd6a9261e093295e9",
+              "file": "basic-components.spec.ts",
+              "line": 119,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Performance E2E Tests",
+          "file": "basic-components.spec.ts",
+          "line": 134,
+          "column": 6,
+          "specs": [
+            {
+              "title": "page loads within reasonable time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-ec2e1f34e432acf8b592",
+              "file": "basic-components.spec.ts",
+              "line": 139,
+              "column": 3
+            },
+            {
+              "title": "no console errors on page load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-8c3e80cc7e3e7e64665a",
+              "file": "basic-components.spec.ts",
+              "line": 148,
+              "column": 3
+            },
+            {
+              "title": "page loads within reasonable time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-fbdc4da6e49a062c3286",
+              "file": "basic-components.spec.ts",
+              "line": 139,
+              "column": 3
+            },
+            {
+              "title": "no console errors on page load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-5efaa1fc67c344d65dac",
+              "file": "basic-components.spec.ts",
+              "line": 148,
+              "column": 3
+            },
+            {
+              "title": "page loads within reasonable time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-838aed4f6b787d25d0da",
+              "file": "basic-components.spec.ts",
+              "line": 139,
+              "column": 3
+            },
+            {
+              "title": "no console errors on page load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-eb85bdd3f8466d5621e9",
+              "file": "basic-components.spec.ts",
+              "line": 148,
+              "column": 3
+            },
+            {
+              "title": "page loads within reasonable time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-5116259873e76986ed51",
+              "file": "basic-components.spec.ts",
+              "line": 139,
+              "column": 3
+            },
+            {
+              "title": "no console errors on page load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-410e0b6821dc640d683c",
+              "file": "basic-components.spec.ts",
+              "line": 148,
+              "column": 3
+            },
+            {
+              "title": "page loads within reasonable time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-777269f85591c2388a25",
+              "file": "basic-components.spec.ts",
+              "line": 139,
+              "column": 3
+            },
+            {
+              "title": "no console errors on page load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "871cdfd5ffd8513d76df-6b61da04566af3fc6a83",
+              "file": "basic-components.spec.ts",
+              "line": 148,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "react-components.spec.ts",
+      "file": "react-components.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "React Components E2E Tests",
+          "file": "react-components.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "React app loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-37de796fef8f167e5367",
+              "file": "react-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Interactive count functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-14b33b83550a17cbfc44",
+              "file": "react-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "Progress update functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-91f9628071b191233193",
+              "file": "react-components.spec.ts",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "Column layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-5a0da2c79d52adf60173",
+              "file": "react-components.spec.ts",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "Row layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-9ab12a4f4cc7b9ada0da",
+              "file": "react-components.spec.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls section works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-7da2e364f0627d190bbb",
+              "file": "react-components.spec.ts",
+              "line": 65,
+              "column": 3
+            },
+            {
+              "title": "App styling and layout is responsive",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-c4c7c47a2d0138635099",
+              "file": "react-components.spec.ts",
+              "line": 79,
+              "column": 3
+            },
+            {
+              "title": "No console errors on React app load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-1d9fb2362baf4ed5deac",
+              "file": "react-components.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "FigmaReactLayout components are properly integrated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-074647a5338ea4f8099f",
+              "file": "react-components.spec.ts",
+              "line": 107,
+              "column": 3
+            },
+            {
+              "title": "Progress visualization updates correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-54505a9ab1dc744486d7",
+              "file": "react-components.spec.ts",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "React app loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-4bf06fbee7e9a37f7632",
+              "file": "react-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Interactive count functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-ff1274b428647f3f734e",
+              "file": "react-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "Progress update functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-af0f47e0c6aad91d4517",
+              "file": "react-components.spec.ts",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "Column layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-760f0b42ad48489b9dd0",
+              "file": "react-components.spec.ts",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "Row layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-b07f6fc90fec7cea8d89",
+              "file": "react-components.spec.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls section works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-41e22fec82fc11e07a51",
+              "file": "react-components.spec.ts",
+              "line": 65,
+              "column": 3
+            },
+            {
+              "title": "App styling and layout is responsive",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-e005ad4559e92d0d4895",
+              "file": "react-components.spec.ts",
+              "line": 79,
+              "column": 3
+            },
+            {
+              "title": "No console errors on React app load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-3b280f1fc1790f338c64",
+              "file": "react-components.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "FigmaReactLayout components are properly integrated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-68fac239c9122ab50bb3",
+              "file": "react-components.spec.ts",
+              "line": 107,
+              "column": 3
+            },
+            {
+              "title": "Progress visualization updates correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-e7e4fad37799847e2d3d",
+              "file": "react-components.spec.ts",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "React app loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-c05e6355d025ed2b526b",
+              "file": "react-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Interactive count functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-f89f57f9c8f3c6d68344",
+              "file": "react-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "Progress update functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-977e2decb02a042c82fc",
+              "file": "react-components.spec.ts",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "Column layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-10334b828cf2d5bb0af9",
+              "file": "react-components.spec.ts",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "Row layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-c935d3d9c80c60e43113",
+              "file": "react-components.spec.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls section works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-df56fd8dc5f1dd737d94",
+              "file": "react-components.spec.ts",
+              "line": 65,
+              "column": 3
+            },
+            {
+              "title": "App styling and layout is responsive",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-be9378513c51adabf786",
+              "file": "react-components.spec.ts",
+              "line": 79,
+              "column": 3
+            },
+            {
+              "title": "No console errors on React app load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-6869fea87a6c3bb892b4",
+              "file": "react-components.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "FigmaReactLayout components are properly integrated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-5aa4b66cfb82628bbfb0",
+              "file": "react-components.spec.ts",
+              "line": 107,
+              "column": 3
+            },
+            {
+              "title": "Progress visualization updates correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-f553905886bc599ceb90",
+              "file": "react-components.spec.ts",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "React app loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-a1b6b95699e179379de6",
+              "file": "react-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Interactive count functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-f9577cfd21ec175f1809",
+              "file": "react-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "Progress update functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-9a3581943976c73cc3a3",
+              "file": "react-components.spec.ts",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "Column layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-2cb47b63102841a901d6",
+              "file": "react-components.spec.ts",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "Row layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-7eb67bfcec69f653eb78",
+              "file": "react-components.spec.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls section works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-f21eef4c8d52dbb2b3a6",
+              "file": "react-components.spec.ts",
+              "line": 65,
+              "column": 3
+            },
+            {
+              "title": "App styling and layout is responsive",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-7ebac47208e19752401c",
+              "file": "react-components.spec.ts",
+              "line": 79,
+              "column": 3
+            },
+            {
+              "title": "No console errors on React app load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-e0839b01611156693f58",
+              "file": "react-components.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "FigmaReactLayout components are properly integrated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-1eb3104961ca15bc8a45",
+              "file": "react-components.spec.ts",
+              "line": 107,
+              "column": 3
+            },
+            {
+              "title": "Progress visualization updates correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-5af06b110fda03745773",
+              "file": "react-components.spec.ts",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "React app loads correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-001af23ccc718cb2cf5b",
+              "file": "react-components.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Interactive count functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-47b3f5d4204a373b377a",
+              "file": "react-components.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "Progress update functionality works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-0bce8ea9e3a3d9b9989f",
+              "file": "react-components.spec.ts",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "Column layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-d96f51200da380e41d35",
+              "file": "react-components.spec.ts",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "Row layout demo is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-143feabe60037a380211",
+              "file": "react-components.spec.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "Interactive controls section works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-efaa06706a623d2314cf",
+              "file": "react-components.spec.ts",
+              "line": 65,
+              "column": 3
+            },
+            {
+              "title": "App styling and layout is responsive",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-a8c4f10cb8eb04b91080",
+              "file": "react-components.spec.ts",
+              "line": 79,
+              "column": 3
+            },
+            {
+              "title": "No console errors on React app load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-26ab22bb37ff02b8fa52",
+              "file": "react-components.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "FigmaReactLayout components are properly integrated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-1fe5ce310a33e2ef941e",
+              "file": "react-components.spec.ts",
+              "line": 107,
+              "column": 3
+            },
+            {
+              "title": "Progress visualization updates correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f791d2abf983bf7bdf6b-e16da31f56e63f64e1de",
+              "file": "react-components.spec.ts",
+              "line": 116,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "visual-regression.spec.ts",
+      "file": "visual-regression.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Visual Regression E2E Tests",
+          "file": "visual-regression.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Basic components visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-be1a2cc4b669f7fd314f",
+              "file": "visual-regression.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Layout scenarios visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-4f74fcbcae3218e3aeb3",
+              "file": "visual-regression.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "ZStack visual layering",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-db244f10b3152c1cce23",
+              "file": "visual-regression.spec.ts",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "Full page visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-a8d7d4f91a6cf5517ae6",
+              "file": "visual-regression.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "Responsive design visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-01fa61c3165ab4986224",
+              "file": "visual-regression.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "Basic components visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-e5167e0fd0ed6a7b823b",
+              "file": "visual-regression.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Layout scenarios visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-afc51841449e3e6b93a3",
+              "file": "visual-regression.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "ZStack visual layering",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-737b0229d8f881b8b881",
+              "file": "visual-regression.spec.ts",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "Full page visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-6f6267b46083b9087e9d",
+              "file": "visual-regression.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "Responsive design visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-458974651d118ea930fa",
+              "file": "visual-regression.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "Basic components visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-635966b0c84c99cb40b5",
+              "file": "visual-regression.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Layout scenarios visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-ce57ba20df05c41ee577",
+              "file": "visual-regression.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "ZStack visual layering",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-6ce4428e7afeaaf0c264",
+              "file": "visual-regression.spec.ts",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "Full page visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-bdbae6bb3c83b9cbb9b6",
+              "file": "visual-regression.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "Responsive design visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-f5fe265a5de3104b2444",
+              "file": "visual-regression.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "Basic components visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-47e077c9f839900798dc",
+              "file": "visual-regression.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Layout scenarios visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-c36a5666251284f9e945",
+              "file": "visual-regression.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "ZStack visual layering",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-bbb664cc46c4fc2ac38a",
+              "file": "visual-regression.spec.ts",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "Full page visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-923af0e41fad1683f245",
+              "file": "visual-regression.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "Responsive design visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-89dc4d6c49970eafa355",
+              "file": "visual-regression.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "Basic components visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-584b3a561c22d18d2cb1",
+              "file": "visual-regression.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "Layout scenarios visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-22123109b62457470b4a",
+              "file": "visual-regression.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "ZStack visual layering",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-4d2dc3565560632ab490",
+              "file": "visual-regression.spec.ts",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "Full page visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-b5833382e4a22a3427e2",
+              "file": "visual-regression.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "Responsive design visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-3b584f1887ce3ff2a9a8",
+              "file": "visual-regression.spec.ts",
+              "line": 39,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "React App Visual Regression Tests",
+          "file": "visual-regression.spec.ts",
+          "line": 59,
+          "column": 6,
+          "specs": [
+            {
+              "title": "React app visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-8d5b734f4850539d8f5d",
+              "file": "visual-regression.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-0d9516621e16430775a8",
+              "file": "visual-regression.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Layout demo sections visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-3a1b4bdd79b168f2bad8",
+              "file": "visual-regression.spec.ts",
+              "line": 82,
+              "column": 3
+            },
+            {
+              "title": "Progress indicators visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-f155cb539e4c966eabe0",
+              "file": "visual-regression.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "React app visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-e424d22982e29327311a",
+              "file": "visual-regression.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-d160f7d8724aaa2db9a3",
+              "file": "visual-regression.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Layout demo sections visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-174b34fa7c027a5589d6",
+              "file": "visual-regression.spec.ts",
+              "line": 82,
+              "column": 3
+            },
+            {
+              "title": "Progress indicators visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-19646b334ceea28f14c0",
+              "file": "visual-regression.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "React app visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-fca28cfa399caa3c8fe7",
+              "file": "visual-regression.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-da220fcaabb3d39d58d5",
+              "file": "visual-regression.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Layout demo sections visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-7930358b75266038f316",
+              "file": "visual-regression.spec.ts",
+              "line": 82,
+              "column": 3
+            },
+            {
+              "title": "Progress indicators visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-64083dcb71405e3d5a0e",
+              "file": "visual-regression.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "React app visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-26b05d74f488dafe84c3",
+              "file": "visual-regression.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-f3912377fb0d06620967",
+              "file": "visual-regression.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Layout demo sections visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-9a1359a92ae50d8bb0e5",
+              "file": "visual-regression.spec.ts",
+              "line": 82,
+              "column": 3
+            },
+            {
+              "title": "Progress indicators visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-2007f26ca557c4a0d20c",
+              "file": "visual-regression.spec.ts",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "React app visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-b0d239b3a8833e43f2f5",
+              "file": "visual-regression.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Interactive elements visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-fdbfc52b597ab5876662",
+              "file": "visual-regression.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Layout demo sections visual consistency",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-fe06108cd5b39905267c",
+              "file": "visual-regression.spec.ts",
+              "line": 82,
+              "column": 3
+            },
+            {
+              "title": "Progress indicators visual states",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "78e23c5201ba1ea12e76-79ea9d22699456677d9b",
+              "file": "visual-regression.spec.ts",
+              "line": 93,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-11-07T08:17:00.386Z",
+    "duration": 73.56999999999994,
+    "expected": 0,
+    "skipped": 230,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

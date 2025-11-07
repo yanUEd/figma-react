@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+dist/
+coverage/
+*.log
+
+# Test outputs
+test-results/
+playwright-report/
+*.lcov
+
+# Build artifacts
+*.tsbuildinfo
+*.lockb
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+docs/
+
+# Config files
+*.config.js
+*.config.ts

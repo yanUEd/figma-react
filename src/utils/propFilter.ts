@@ -71,6 +71,7 @@ const INTERNAL_LAYOUT_PROPS = new Set([
  * @returns 是否为事件处理器
  */
 export const isEventProp = (prop: string): boolean => {
+  if (!prop || typeof prop !== 'string') return false;
   return (
     prop.startsWith('on') &&
     prop.length > 2 &&
@@ -84,6 +85,7 @@ export const isEventProp = (prop: string): boolean => {
  * @returns 是否为数据属性
  */
 export const isDataProp = (prop: string): boolean => {
+  if (!prop || typeof prop !== 'string') return false;
   return prop.startsWith('data-');
 };
 
@@ -93,6 +95,7 @@ export const isDataProp = (prop: string): boolean => {
  * @returns 是否为 ARIA 属性
  */
 export const isAriaProp = (prop: string): boolean => {
+  if (!prop || typeof prop !== 'string') return false;
   return prop.startsWith('aria-');
 };
 
@@ -111,6 +114,7 @@ export const isInternalLayoutProp = (prop: string): boolean => {
  * @returns 是否为 React 标准属性
  */
 export const isReactStandardProp = (prop: string): boolean => {
+  if (!prop || typeof prop !== 'string') return false;
   return REACT_STANDARD_PROPS.has(prop);
 };
 
@@ -127,6 +131,8 @@ export const isReactStandardProp = (prop: string): boolean => {
  * @returns 是否应该转发该属性到 DOM
  */
 export const smartShouldForwardProp = (prop: string): boolean => {
+  if (!prop || typeof prop !== 'string') return true;
+
   // 1. 过滤 transient props
   if (prop.startsWith('$')) {
     return false;

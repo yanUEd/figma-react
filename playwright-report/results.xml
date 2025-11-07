@@ -1,0 +1,962 @@
+<testsuites id="" name="" tests="230" failures="0" skipped="230" errors="0" time="0.07356999999999994">
+<testsuite name="accessibility.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="chromium" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Accessibility E2E Tests › Page has proper heading hierarchy" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Test sections are properly structured" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Interactive elements are keyboard accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Color contrast and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Content is accessible via ARIA attributes" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Page structure is semantic" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › React app has proper heading structure" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Interactive controls are properly labeled" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Form elements have proper labels" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Content structure is logical and navigable" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Progress information is accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Keyboard navigation works properly" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Visual hierarchy and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="basic-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="chromium" tests="14" failures="0" skipped="14" time="0" errors="0">
+<testcase name="Basic Components E2E Tests › page loads correctly" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic box component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic row component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic column component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › layout scenarios are visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack items are properly layered" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › test sections are properly styled" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › container has proper layout" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page has proper heading structure" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › components have proper text content" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page is responsive on different viewports" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › page loads within reasonable time" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › no console errors on page load" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="react-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="chromium" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="React Components E2E Tests › React app loads correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive count functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress update functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Column layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Row layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive controls section works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › App styling and layout is responsive" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › No console errors on React app load" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › FigmaReactLayout components are properly integrated" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress visualization updates correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="visual-regression.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="chromium" tests="9" failures="0" skipped="9" time="0" errors="0">
+<testcase name="Visual Regression E2E Tests › Basic components visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Layout scenarios visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › ZStack visual layering" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Full page visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Responsive design visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › React app visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Interactive elements visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Layout demo sections visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Progress indicators visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="accessibility.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="firefox" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Accessibility E2E Tests › Page has proper heading hierarchy" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Test sections are properly structured" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Interactive elements are keyboard accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Color contrast and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Content is accessible via ARIA attributes" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Page structure is semantic" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › React app has proper heading structure" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Interactive controls are properly labeled" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Form elements have proper labels" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Content structure is logical and navigable" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Progress information is accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Keyboard navigation works properly" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Visual hierarchy and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="basic-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="firefox" tests="14" failures="0" skipped="14" time="0" errors="0">
+<testcase name="Basic Components E2E Tests › page loads correctly" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic box component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic row component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic column component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › layout scenarios are visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack items are properly layered" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › test sections are properly styled" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › container has proper layout" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page has proper heading structure" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › components have proper text content" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page is responsive on different viewports" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › page loads within reasonable time" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › no console errors on page load" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="react-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="firefox" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="React Components E2E Tests › React app loads correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive count functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress update functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Column layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Row layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive controls section works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › App styling and layout is responsive" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › No console errors on React app load" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › FigmaReactLayout components are properly integrated" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress visualization updates correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="visual-regression.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="firefox" tests="9" failures="0" skipped="9" time="0" errors="0">
+<testcase name="Visual Regression E2E Tests › Basic components visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Layout scenarios visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › ZStack visual layering" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Full page visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Responsive design visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › React app visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Interactive elements visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Layout demo sections visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Progress indicators visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="accessibility.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="webkit" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Accessibility E2E Tests › Page has proper heading hierarchy" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Test sections are properly structured" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Interactive elements are keyboard accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Color contrast and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Content is accessible via ARIA attributes" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Page structure is semantic" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › React app has proper heading structure" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Interactive controls are properly labeled" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Form elements have proper labels" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Content structure is logical and navigable" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Progress information is accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Keyboard navigation works properly" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Visual hierarchy and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="basic-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="webkit" tests="14" failures="0" skipped="14" time="0" errors="0">
+<testcase name="Basic Components E2E Tests › page loads correctly" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic box component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic row component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic column component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › layout scenarios are visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack items are properly layered" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › test sections are properly styled" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › container has proper layout" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page has proper heading structure" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › components have proper text content" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page is responsive on different viewports" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › page loads within reasonable time" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › no console errors on page load" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="react-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="webkit" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="React Components E2E Tests › React app loads correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive count functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress update functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Column layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Row layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive controls section works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › App styling and layout is responsive" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › No console errors on React app load" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › FigmaReactLayout components are properly integrated" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress visualization updates correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="visual-regression.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="webkit" tests="9" failures="0" skipped="9" time="0" errors="0">
+<testcase name="Visual Regression E2E Tests › Basic components visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Layout scenarios visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › ZStack visual layering" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Full page visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Responsive design visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › React app visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Interactive elements visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Layout demo sections visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Progress indicators visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="accessibility.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="Mobile Chrome" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Accessibility E2E Tests › Page has proper heading hierarchy" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Test sections are properly structured" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Interactive elements are keyboard accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Color contrast and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Content is accessible via ARIA attributes" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Page structure is semantic" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › React app has proper heading structure" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Interactive controls are properly labeled" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Form elements have proper labels" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Content structure is logical and navigable" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Progress information is accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Keyboard navigation works properly" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Visual hierarchy and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="basic-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="Mobile Chrome" tests="14" failures="0" skipped="14" time="0" errors="0">
+<testcase name="Basic Components E2E Tests › page loads correctly" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic box component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic row component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic column component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › layout scenarios are visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack items are properly layered" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › test sections are properly styled" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › container has proper layout" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page has proper heading structure" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › components have proper text content" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page is responsive on different viewports" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › page loads within reasonable time" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › no console errors on page load" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="react-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="Mobile Chrome" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="React Components E2E Tests › React app loads correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive count functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress update functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Column layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Row layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive controls section works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › App styling and layout is responsive" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › No console errors on React app load" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › FigmaReactLayout components are properly integrated" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress visualization updates correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="visual-regression.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="Mobile Chrome" tests="9" failures="0" skipped="9" time="0" errors="0">
+<testcase name="Visual Regression E2E Tests › Basic components visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Layout scenarios visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › ZStack visual layering" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Full page visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Responsive design visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › React app visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Interactive elements visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Layout demo sections visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Progress indicators visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="accessibility.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="Mobile Safari" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Accessibility E2E Tests › Page has proper heading hierarchy" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Test sections are properly structured" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Interactive elements are keyboard accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Color contrast and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Content is accessible via ARIA attributes" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › Page structure is semantic" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › React app has proper heading structure" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Interactive controls are properly labeled" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Form elements have proper labels" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Content structure is logical and navigable" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Progress information is accessible" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Keyboard navigation works properly" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Accessibility Tests › Visual hierarchy and readability" classname="accessibility.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="basic-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="Mobile Safari" tests="14" failures="0" skipped="14" time="0" errors="0">
+<testcase name="Basic Components E2E Tests › page loads correctly" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic box component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic row component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › basic column component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › layout scenarios are visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack component is visible" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › zstack items are properly layered" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › test sections are properly styled" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Basic Components E2E Tests › container has proper layout" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page has proper heading structure" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › components have proper text content" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility E2E Tests › page is responsive on different viewports" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › page loads within reasonable time" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Performance E2E Tests › no console errors on page load" classname="basic-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="react-components.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="Mobile Safari" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="React Components E2E Tests › React app loads correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive count functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress update functionality works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Column layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Row layout demo is visible" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Interactive controls section works" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › App styling and layout is responsive" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › No console errors on React app load" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › FigmaReactLayout components are properly integrated" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React Components E2E Tests › Progress visualization updates correctly" classname="react-components.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="visual-regression.spec.ts" timestamp="2025-11-07T08:17:00.459Z" hostname="Mobile Safari" tests="9" failures="0" skipped="9" time="0" errors="0">
+<testcase name="Visual Regression E2E Tests › Basic components visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Layout scenarios visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › ZStack visual layering" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Full page visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression E2E Tests › Responsive design visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › React app visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Interactive elements visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Layout demo sections visual consistency" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="React App Visual Regression Tests › Progress indicators visual states" classname="visual-regression.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

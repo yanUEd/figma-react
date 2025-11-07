@@ -28,6 +28,7 @@ export const Row = forwardRef<HTMLDivElement, RowProps>(
       opacity,
       distribution,
       wrap,
+      ...restProps
     },
     ref
   ) => {
@@ -59,6 +60,7 @@ export const Row = forwardRef<HTMLDivElement, RowProps>(
         className={className}
         style={style}
         {...transientProps}
+        {...restProps}
       >
         {children}
       </StyledRow>

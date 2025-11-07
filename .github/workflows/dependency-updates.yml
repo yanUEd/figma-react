@@ -1,0 +1,87 @@
+name: Dependency Updates
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-dependencies:
+    name: Update Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Check for outdated packages
+        id: outdated
+        run: |
+          npm ci
+          OUTDATED=$(npm outdated --json || echo '{}')
+          echo "outdated<<EOF" >> $GITHUB_OUTPUT
+          echo "$OUTDATED" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request for updates
+        if: steps.outdated.outputs.outdated != '{}'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: '🔧 chore: update dependencies'
+          title: '🔧 Automated Dependency Updates'
+          body: |
+            ## Automated Dependency Updates
+
+            This PR updates outdated dependencies to improve security and compatibility.
+
+            ### Changes:
+            - Updated outdated npm packages
+            - All tests should pass after these updates
+
+            ### Checklist:
+            - [ ] All tests pass
+            - [ ] No breaking changes detected
+            - [ ] Package functionality verified
+
+            This PR was created automatically by GitHub Actions.
+          branch: automated-dependency-updates
+          delete-branch: true
+          labels: |
+            dependencies
+            automated
+
+  security-scan:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run security audit
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+
+      - name: Generate security report
+        if: failure()
+        run: |
+          echo "🔒 Security vulnerabilities detected!"
+          echo "Please review and update affected packages."
+          exit 1

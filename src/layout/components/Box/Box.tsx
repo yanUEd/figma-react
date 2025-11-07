@@ -27,6 +27,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
       radius,
       opacity,
       distribution,
+      ...restProps
     },
     ref
   ) => {
@@ -57,6 +58,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
         className={className}
         style={style}
         {...transientProps}
+        {...restProps}
       >
         {children}
       </StyledBox>

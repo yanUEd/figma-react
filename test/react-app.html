@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App Test - figma-react-layout</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="../dist/index.umd.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .demo-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .card-header {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-footer {
+            padding: 15px 20px;
+            background: #fafafa;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .button {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .button-primary {
+            background: #007bff;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #0056b3;
+        }
+
+        .button-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .button-secondary:hover {
+            background: #545b62;
+        }
+
+        .stats {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { createElement } = React;
+        const { useState, useEffect } = React;
+
+        // Sample App Component
+        function App() {
+            const [count, setCount] = useState(0);
+            const [items, setItems] = useState([
+                { id: 1, title: 'Card 1', status: 'active', progress: 75 },
+                { id: 2, title: 'Card 2', status: 'pending', progress: 45 },
+                { id: 3, title: 'Card 3', status: 'completed', progress: 100 }
+            ]);
+
+            const updateItemProgress = (id, progress) => {
+                setItems(items.map(item =>
+                    item.id === id ? { ...item, progress } : item
+                ));
+            };
+
+            return (
+                createElement('div', { className: 'app-container' },
+                    createElement('header', null,
+                        createElement('h1', null, 'React Layout Test App'),
+                        createElement('p', null, 'Testing figma-react-layout components in real React application')
+                    ),
+                    createElement('div', { className: 'content' },
+                        // Stats Section
+                        createElement('div', { className: 'stats' },
+                            createElement('div', { className: 'stat-item' },
+                                createElement('div', { className: 'stat-value' }, count),
+                                createElement('div', { className: 'stat-label' }, 'Total Components')
+                            ),
+                            createElement('div', { className: 'stat-item' },
+                                createElement('div', { className: 'stat-value' }, items.length),
+                                createElement('div', { className: 'stat-label' }, 'Active Items')
+                            ),
+                            createElement('div', { className: 'stat-item' },
+                                createElement('div', { className: 'stat-value' },
+                                    Math.round(items.reduce((acc, item) => acc + item.progress, 0) / items.length)
+                                ),
+                                createElement('div', { className: 'stat-label' }, 'Avg Progress')
+                            )
+                        ),
+
+                        // Demo Cards
+                        createElement('div', { className: 'demo-grid' },
+                            items.map(item => (
+                                createElement('div', { key: item.id, className: 'demo-card' },
+                                    createElement('div', { className: 'card-header' },
+                                        item.title
+                                    ),
+                                    createElement('div', { className: 'card-body' },
+                                        createElement(FigmaReactLayout.Box, {
+                                            padding: '15px',
+                                            gap: '10px',
+                                            fill: '#f0f8ff',
+                                            radius: '8px'
+                                        },
+                                            createElement('div', {
+                                                style: {
+                                                    height: '20px',
+                                                    background: item.status === 'completed' ? '#d4edda' :
+                                                                   item.status === 'active' ? '#cce5ff' : '#f8d7da',
+                                                    borderRadius: '4px',
+                                                    marginBottom: '5px'
+                                                }
+                                            }),
+                                            createElement('div', {
+                                                style: {
+                                                    fontSize: '14px',
+                                                    color: '#495057'
+                                                }
+                                            }, `Progress: ${item.progress}%`)
+                                        })
+                                    ),
+                                    createElement('div', { className: 'card-footer' },
+                                        createElement('button', {
+                                            className: 'button button-primary',
+                                            onClick: () => updateItemProgress(item.id, Math.min(100, item.progress + 10))
+                                        }, 'Update'),
+                                        createElement('button', {
+                                            className: 'button button-secondary',
+                                            onClick: () => updateItemProgress(item.id, Math.max(0, item.progress - 10))
+                                        }, 'Reset')
+                                    )
+                                )
+                            ))
+                        ),
+
+                        // Layout Demo Section
+                        createElement('div', { className: 'demo-grid' },
+                            createElement('div', { className: 'demo-card' },
+                                createElement('div', { className: 'card-header' }, 'Column Layout Demo'),
+                                createElement('div', { className: 'card-body' },
+                                    createElement(FigmaReactLayout.Column, {
+                                        gap: '15px',
+                                        padding: '20px',
+                                        alignment: 'center-center',
+                                        fill: '#e8f5e8',
+                                        radius: '12px'
+                                    },
+                                        createElement(FigmaReactLayout.Box, {
+                                            height: '40px',
+                                            fill: '#4caf50',
+                                            radius: '8px',
+                                            alignment: 'center-center'
+                                        }, 'Header Item'),
+                                        createElement(FigmaReactLayout.Box, {
+                                            height: '60px',
+                                            fill: '#2196f3',
+                                            radius: '8px',
+                                            alignment: 'center-center'
+                                        }, 'Content Area'),
+                                        createElement(FigmaReactLayout.Box, {
+                                            height: '30px',
+                                            fill: '#ff9800',
+                                            radius: '8px',
+                                            alignment: 'center-center'
+                                        }, 'Footer Item')
+                                    )
+                                )
+                            ),
+                            createElement('div', { className: 'demo-card' },
+                                createElement('div', { className: 'card-header' }, 'Row Layout Demo'),
+                                createElement('div', { className: 'card-body' },
+                                    createElement(FigmaReactLayout.Row, {
+                                        gap: '15px',
+                                        padding: '20px',
+                                        alignment: 'center-center',
+                                        fill: '#fff3e0',
+                                        radius: '12px'
+                                    },
+                                        createElement(FigmaReactLayout.Box, {
+                                            width: '80px',
+                                            height: '60px',
+                                            fill: '#9c27b0',
+                                            radius: '8px',
+                                            alignment: 'center-center'
+                                        }, 'Item 1'),
+                                        createElement(FigmaReactLayout.Box, {
+                                            width: '100px',
+                                            height: '60px',
+                                            fill: '#2196f3',
+                                            radius: '8px',
+                                            alignment: 'center-center'
+                                        }, 'Item 2'),
+                                        createElement(FigmaReactLayout.Box, {
+                                            width: '120px',
+                                            height: '60px',
+                                            fill: '#4caf50',
+                                            radius: '8px',
+                                            alignment: 'center-center'
+                                        }, 'Item 3')
+                                    )
+                                )
+                            )
+                        ),
+
+                        // Interactive Demo
+                        createElement('div', { className: 'demo-card' },
+                            createElement('div', { className: 'card-header' }, 'Interactive Controls'),
+                            createElement('div', { className: 'card-body' },
+                                createElement(FigmaReactLayout.Column, {
+                                    gap: '15px',
+                                    padding: '20px'
+                                },
+                                    createElement('button', {
+                                        className: 'button button-primary',
+                                        onClick: () => setCount(count + 1)
+                                    }, `Count: ${count}`),
+                                    createElement(FigmaReactLayout.Row, {
+                                        gap: '10px',
+                                        distribution: 'space-between'
+                                    },
+                                        createElement('button', {
+                                            className: 'button button-secondary',
+                                        onClick: () => setCount(0)
+                                        }, 'Reset'),
+                                        createElement('button', {
+                                            className: 'button button-primary',
+                                            onClick: () => setCount(count * 2)
+                                        }, 'Double')
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+
+        // Render the app
+        const root = document.getElementById('root');
+        const rootElement = createElement(App);
+        ReactDOM.render(rootElement, root);
+    </script>
+</body>
+</html>

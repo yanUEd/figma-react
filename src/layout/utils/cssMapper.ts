@@ -134,6 +134,9 @@ export const generateCSSConfig = (
   props: any,
   containerType: 'box' | 'column' | 'row' | 'zstack' = 'box'
 ): CSSConfig => {
+  // 处理null/undefined props
+  if (!props) props = {};
+
   const {
     width,
     height,

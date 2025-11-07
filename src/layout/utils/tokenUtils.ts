@@ -1,6 +1,6 @@
 // 解析token值，支持CSS变量和自定义值
 export const parseToken = (value: string | null): string | null => {
-  if (!value || value === null) return null;
+  if (!value || value === null || typeof value !== 'string') return null;
 
   // 如果是token格式（$前缀），转换为CSS变量
   if (value.startsWith('$')) {
@@ -14,7 +14,7 @@ export const parseToken = (value: string | null): string | null => {
 
 // 颜色token回退机制 - 当token不存在时回退到黑色
 export const parseColorToken = (value: string | null, fallback: string = '#000000'): string | null => {
-  if (!value || value === null) return null;
+  if (!value || value === null || typeof value !== 'string') return null;
 
   if (value.startsWith('$')) {
     const tokenName = value.slice(1);
@@ -42,7 +42,7 @@ export const parseBorderToken = (value: string | null): string | null => {
 
 // 透明度token解析（确保是0-1之间的数值）
 export const parseOpacityToken = (value: string | null): string | null => {
-  if (!value || value === null) return null;
+  if (!value || value === null || typeof value !== 'string') return null;
 
   if (value.startsWith('$')) {
     return parseToken(value);

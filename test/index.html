@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>figma-react-layout Test Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .test-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .demo-box {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            background: #e3f2fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .demo-row {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .demo-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .demo-zstack {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 10px 0;
+        }
+
+        .zstack-item {
+            position: absolute;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>figma-react-layout Test Page</h1>
+        <p>This page is used for Playwright E2E testing.</p>
+
+        <div class="test-section">
+            <div class="test-title">Basic Components Test</div>
+            <div id="basic-components">
+                <div class="demo-box" data-testid="basic-box">
+                    Basic Box Component
+                </div>
+
+                <div class="demo-row" data-testid="basic-row">
+                    <div class="demo-box">Item 1</div>
+                    <div class="demo-box">Item 2</div>
+                    <div class="demo-box">Item 3</div>
+                </div>
+
+                <div class="demo-column" data-testid="basic-column">
+                    <div class="demo-box">Top</div>
+                    <div class="demo-box">Middle</div>
+                    <div class="demo-box">Bottom</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <div class="test-title">Layout Scenarios</div>
+            <div id="layout-scenarios">
+                <div class="demo-column" data-testid="layout-column" style="height: 200px;">
+                    <div class="demo-box" style="height: 40px;">Header</div>
+                    <div class="demo-row" style="height: 100px; justify-content: space-between;">
+                        <div class="demo-box" style="width: 100px;">Content Left</div>
+                        <div class="demo-box" style="width: 100px;">Content Right</div>
+                    </div>
+                    <div class="demo-box" style="height: 30px;">Footer</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <div class="test-title">ZStack Test</div>
+            <div id="zstack-test">
+                <div class="demo-zstack" data-testid="zstack">
+                    <div class="zstack-item" style="background: lightblue; top: 0; left: 0; width: 100%; height: 100%;">Background</div>
+                    <div class="zstack-item" style="background: white; top: 20px; left: 20px; right: 20px; width: calc(100% - 40px); height: calc(100% - 40px);">Foreground</div>
+                    <div class="zstack-item" style="background: rgba(255,255,255,0.9); top: 40px; left: 40px; right: 40px; width: calc(100% - 80px); height: 100px; top: 40px; left: 40px;">Centered Content</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
