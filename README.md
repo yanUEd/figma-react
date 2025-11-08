@@ -255,11 +255,42 @@ test('onClick handler works', () => {
 });
 ```
 
-**详细文档**: 参见 [onClick 事件处理指南](doc/onClick-handlers.md)
+### 故障排除
 
-**在线示例**:
-- [onClick 示例页面](test/onClick-examples.html)
-- [onClick 调试面板](test/onClick-debug.html)
+#### onClick 未触发
+
+**问题**: onClick 处理器不执行。
+
+**解决方案**:
+1. 检查 onClick prop 是否正确传递
+2. 确保组件有 proper 尺寸
+3. 确保没有其他元素覆盖组件
+4. 检查 CSS `pointer-events: none` 未被应用
+
+#### 事件冒泡问题
+
+**问题**: 父级 onClick 在子级点击时意外触发。
+
+**解决方案**: 在子级处理器中使用 `event.stopPropagation()`:
+
+```jsx
+const handleChildClick = (event) => {
+  event.stopPropagation();
+  // 子级特定逻辑
+};
+```
+
+#### 性能问题
+
+**问题**: onClick 处理器导致不必要重渲染。
+
+**解决方案**: 使用 `useCallback` 优化:
+
+```jsx
+const handleClick = useCallback(() => {
+  // 处理器逻辑
+}, [dependencies]);
+```
 
 ## 📚 组件文档
 
@@ -479,9 +510,13 @@ function App() {
 }
 ```
 
-## 📖 完整 API
+## 📖 完整 API 规范
 
-### 共同属性
+### 组件概览
+
+figma-react-layout 提供四个核心组件，全部属性命名、取值范围、语义均参考 Figma 属性面板。
+
+#### 共同属性
 
 | 属性 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
@@ -499,11 +534,157 @@ function App() {
 | `opacity` | `string \| null` | `null` | 透明度 |
 | `overflow` | `Overflow` | `'hidden'` | 溢出处理 |
 
-### Row 特有属性
+#### Row 特有属性
 
 | 属性 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `wrap` | `'true' \| 'false'` | `'false'` | 是否自动换行 |
+
+#### 组件专属说明
+
+**Column**: 继承 `<Box>` 全部属性，但**不支持 `distribution` 属性**（垂直布局中 distribution 意义有限）。
+
+**ZStack**: 继承 `<Box>` 大部分属性，但**移除了 `gap` 和 `distribution` 属性**（层叠布局中无实际意义）。
+
+### 类型定义
+
+```typescript
+// 9点对齐方式
+type Alignment =
+  | 'top-left' | 'top-center' | 'top-right'
+  | 'center-left' | 'center-center' | 'center-right'
+  | 'bottom-left' | 'bottom-center' | 'bottom-right';
+
+// 分布方式
+type Distribution = 'pack' | 'center' | 'space' | 'space-between';
+
+// 溢出处理
+type Overflow = 'visible' | 'hidden' | 'scroll' | 'auto';
+
+// 边框样式
+type StrokeStyle = 'solid' | 'dashed' | 'dotted' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' | null;
+
+// 尺寸
+type WidthHeight = 'fill' | 'hug' | string;
+```
+
+## 🔧 完整的 React 属性支持
+
+figma-react-layout 支持**完整的 React 属性生态系统**，自动识别和转发所有标准 React 属性。
+
+### 支持的属性类别
+
+- 🖱️ **所有 React 事件属性**（onClick, onKeyDown, onTouchStart 等）
+- 🏷️ **基础 HTML 属性**（id, className, style, title 等）
+- ♿ **可访问性属性**（role, aria-label, aria-expanded 等）
+- 📊 **自定义数据属性**（data-testid, data-user-id 等）
+- 🔧 **React 特殊属性**（key, ref, dangerouslySetInnerHTML 等）
+- 📝 **表单属性**（name, value, checked, disabled 等）
+- 🎬 **媒体属性**（src, alt, controls, loop 等）
+
+### 智能属性过滤
+
+组件采用智能属性过滤系统：
+
+```typescript
+const smartShouldForwardProp = (prop: string): boolean => {
+  // 1. 过滤 transient props ($ 前缀)
+  if (prop.startsWith('$')) return false;
+
+  // 2. 过滤内部布局属性
+  if (isInternalLayoutProp(prop)) return false;
+
+  // 3. 自动允许所有事件处理器
+  if (isEventProp(prop)) return true;
+
+  // 4. 自动允许数据属性
+  if (isDataProp(prop)) return true;
+
+  // 5. 自动允许 ARIA 属性
+  if (isAriaProp(prop)) return true;
+
+  // 6. 允许 React 标准属性
+  if (isReactStandardProp(prop)) return true;
+
+  // 7. 保守策略：未知属性默认允许
+  return true;
+};
+```
+
+### 使用示例
+
+现在可以像使用普通 React 组件一样使用布局组件：
+
+```tsx
+<Box
+  // 布局属性
+  width="300px" height="150px" fill="#e3f2fd"
+
+  // 完整的 React 属性支持
+  id="my-box" className="interactive" role="button"
+  aria-label="交互式组件" data-testid="test-box"
+  onClick={handleClick} onKeyDown={handleKeyDown}
+  onMouseEnter={handleMouseEnter} onFocus={handleFocus}
+  draggable tabIndex={0}
+>
+  内容
+</Box>
+```
+
+## 🔧 styled-components 未知属性警告修复
+
+使用 figma-react-layout 时，可能会出现 styled-components 未知属性警告（如 "gap", "padding", "distribution" 等）。我们采用了 **Transient Props（$前缀）** 方案，这是 styled-components 推荐的最佳实践。
+
+### 修复效果
+
+- ✅ 完全消除了未知属性警告
+- ✅ 遵循 styled-components 最佳实践
+- ✅ 不破坏现有 API 使用方式
+- ✅ 确保所有组件实现一致性
+
+### 使用方式
+
+#### 基本使用（无变化）
+
+```tsx
+import { Box, Row, Column } from 'figma-react-layout';
+
+// 使用方式完全不变
+<Box gap="md" padding="16px" fill="blue">
+  <Row distribution="space-between" alignment="center">
+    <Column gap="sm">内容</Column>
+  </Row>
+</Box>
+```
+
+#### StyleProvider 配置（可选但推荐）
+
+```tsx
+import { StyleProvider } from 'figma-react-layout';
+
+function App() {
+  return (
+    <StyleProvider>
+      {/* 你的应用 */}
+    </StyleProvider>
+  );
+}
+```
+
+### 技术细节
+
+**Transient Props 工作原理**：
+1. 组件接收标准 props（如 `gap`, `padding`）
+2. 内部转换为 `$gap`, `$padding` 等 transient props
+3. styled-components 自动过滤 `$` 前缀的 props，不传递到 DOM
+4. 样式函数中接收 transient props 并转换为标准 props 供 CSS 生成器使用
+
+**双重保护机制**：
+1. **组件层面**: 转换为 transient props
+2. **样式层面**: `shouldForwardProp` 配置过滤 `$` 前缀
+3. **全局层面**: StyleProvider 的 shouldForwardProp 配置
+
+这种多层保护确保即使有遗漏，自定义属性也不会传递到 DOM。
 
 ## 🆚 对比传统方案
 

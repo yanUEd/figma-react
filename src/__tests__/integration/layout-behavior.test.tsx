@@ -498,7 +498,7 @@ describe('Layout Behavior Integration Tests', () => {
           <Box height="40px" fill="#f8f9fa" radius="4px" />
           <Box height="40px" fill="#f8f9fa" radius="4px" />
           <Box height="80px" fill="#f8f9fa" radius="4px" />
-          <Row gap="10px" distribution="flex-end">
+          <Row gap="10px" distribution="center">
             <Box width="80px" height="35px" fill="#6c757d" radius="4px" />
             <Box width="100px" height="35px" fill="#007bff" radius="4px" />
           </Row>

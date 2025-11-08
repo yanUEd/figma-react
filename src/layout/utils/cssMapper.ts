@@ -198,20 +198,20 @@ export const generateCSSConfig = (
   // 尺寸属性
   if (width) config.width = mapSize(width as WidthHeight);
   if (height) config.height = mapSize(height as WidthHeight);
-  if (minWidth) config.minWidth = parseSizeToken(minWidth) || undefined;
-  if (maxWidth) config.maxWidth = parseSizeToken(maxWidth) || undefined;
-  if (minHeight) config.minHeight = parseSizeToken(minHeight) || undefined;
-  if (maxHeight) config.maxHeight = parseSizeToken(maxHeight) || undefined;
+  if (minWidth != null) config.minWidth = parseSizeToken(minWidth) || undefined;
+  if (maxWidth != null) config.maxWidth = parseSizeToken(maxWidth) || undefined;
+  if (minHeight != null) config.minHeight = parseSizeToken(minHeight) || undefined;
+  if (maxHeight != null) config.maxHeight = parseSizeToken(maxHeight) || undefined;
 
   // 布局属性
-  if (finalGap) config.gap = parseSpacingToken(finalGap) || undefined;
+  if (finalGap != null) config.gap = parseSpacingToken(finalGap) || undefined;
   if (distribution && containerType !== 'column' && containerType !== 'zstack') {
     config.justifyContent = mapDistribution(distribution);
   }
 
   // 视觉属性
-  if (fill) config.backgroundColor = parseColorToken(fill) || undefined;
-  if (opacity) config.opacity = parseOpacityToken(opacity) || undefined;
+  if (fill != null) config.backgroundColor = parseColorToken(fill) || undefined;
+  if (opacity != null) config.opacity = parseOpacityToken(opacity) || undefined;
 
   return config;
 };
